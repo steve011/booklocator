@@ -4,7 +4,7 @@ CIS4301
 DB Project
 
 
-Make sure the following appears in all of you php files in order to connect to the database.
+<b>Make sure the following appears in all of you php files in order to connect to the database:</b>
 
 ```
 #!/usr/local/bin/php
