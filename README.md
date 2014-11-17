@@ -1,7 +1,7 @@
-CIS4301
+Book Locator
 =======
 
-DB Project
+CIS4301 DB Project
 
 
 <b>Make sure the following appears in all of you php files in order to connect to the database:</b>
