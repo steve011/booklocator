@@ -10,12 +10,13 @@ CIS4301 DB Project
 #!/usr/local/bin/php
 <?php require ('../connect.php'); ?>
 
+<?php
 ...
 
 Some PHP
 
 ...
-```php
-oci_close($connection);
-```
+?>
+
+<?php oci_close($connection); ?>
 ```
