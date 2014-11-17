@@ -4,7 +4,7 @@ Book Locator
 CIS4301 DB Project
 
 
-<b>Make sure the following appears in all of you php files in order to connect to the database:</b>
+<b>Make sure the following appears in all of your php files in order to connect to the database:</b>
 
 ```php
 #!/usr/local/bin/php
