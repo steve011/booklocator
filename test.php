@@ -1,8 +1,7 @@
 #!/usr/local/bin/php
-<?php require ('../connect.php'); ?> <!--connects to database-->
+
 
 <?php
-echo "hello"; 
+phpinfo(); 
 ?>
 
-<?php oci_close($connection); ?> <!--closes database connection-->
