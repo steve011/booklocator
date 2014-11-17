@@ -8,7 +8,7 @@ CIS4301 DB Project
 
 ```php
 #!/usr/local/bin/php
-<?php require ('../connect.php'); ?>
+<?php require ('../connect.php'); ?> #connects to database
 
 <?php
 ...
@@ -18,5 +18,5 @@ Some PHP...
 ...
 ?>
 
-<?php oci_close($connection); ?>
+<?php oci_close($connection); ?> #closes database connection
 ```
