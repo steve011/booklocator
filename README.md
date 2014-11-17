@@ -15,6 +15,7 @@ CIS4301 DB Project
 Some PHP
 
 ...
-
+```php
 oci_close($connection);
+```
 ```
