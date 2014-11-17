@@ -2,12 +2,18 @@
 <?php require ('../connect.php'); ?>
 
 
-<html><head><title>PHP Test</title></head>
+<html><head><title>Home Page</title></head>
 <body>
 
 
-oci_close($connection);
+  <a href="http://cise.ufl.edu/~sw5/Book_Locator/ui.php">Front End</a>
+  <a href="http://cise.ufl.edu/~sw5/Book_Locator/search.php">Search</a> 
+  <a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Back End</a> 
 
+
+
+<?php
+oci_close($connection);
 ?>
 
 </body></html>
