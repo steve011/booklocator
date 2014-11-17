@@ -6,9 +6,9 @@
 <body>
 
 
-  <h1><a href="http://cise.ufl.edu/~sw5/Book_Locator/ui.php">Front End</a></h1>
-  <h1><a href="http://cise.ufl.edu/~sw5/Book_Locator/search.php">Search</a></h1> 
-  <h1><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Back End</a></h1> 
+  <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/ui.php">Front End</a></h1>
+  <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/search.php">Search</a></h1> 
+  <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Back End</a></h1> 
 
 
 
