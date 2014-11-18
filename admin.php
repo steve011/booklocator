@@ -1,11 +1,8 @@
 #!/usr/local/bin/php
 <?php require ('../connect.php'); ?>
 
-
 <html><head><title>PHP Test</title></head>
 <body>
-
-<h1>HELLLo!!!!</h1>
 
 <h2>Search</h2>
 <table CELLSPACING=5>
