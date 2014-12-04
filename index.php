@@ -11,7 +11,7 @@
   <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Back End</a></h1> 
   <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Database Manager (for testing purposes...)</a></h2>
   <?php
-  $conn = oci_connect('hr', 'welcome', 'localhost/XE');
+  $conn = oci_connect('hr', 'welcome', 'CISETS');
   $stid = oci_parse($conn, 'SELECT * FROM books');
   oci_execute($stid);
   echo "<table border='1'>\n";
