@@ -8,7 +8,12 @@ CIS4301 DB Project
 
 ```php
 #!/usr/local/bin/php
-<?php require ('../connect.php'); ?> <!--connects to database-->
+<?php require ('../connect.php'); // connects to database 
+/* 
+connect.php contains: 
+$connection = oci_connect($username, $password, $server);
+*/
+?> 
 
 <?php
 ...
