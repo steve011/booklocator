@@ -11,8 +11,9 @@
   <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Back End</a></h1> 
   <h2><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Database Manager (for testing purposes...)</a></h2>
   <?php
-  $conn = oci_connect('hr', 'welcome', "localhost/XE", 'SW5');
-  $stid = oci_parse($conn, 'SELECT * FROM books');
+  /*Don't need this: $conn = oci_connect('hr', 'welcome', "localhost/XE", 'SW5'); 
+    Just use $connection instead; the variable is intialized in connect.php, which is included above.*/
+  $stid = oci_parse($connection, 'SELECT * FROM books AND ROWNUM <= 1000'); /* Added "AND ROWNUM <= 1000", takes forever to load otherwise */
   oci_execute($stid);
   echo "<table border='1'>\n";
   while($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULL)){
