@@ -26,7 +26,7 @@
   }*/
   while($row = oci_fetch_array($stid))
   {
-    echo '<img src="'.$row->IMAGE_URL_L.'">';
+    echo '<img src="'.$row[IMAGE_URL_L].'">';
   }
   //echo "</table>\n";
   
