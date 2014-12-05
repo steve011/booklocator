@@ -15,7 +15,7 @@
     Just use $connection instead; the variable is intialized in connect.php, which is included above.*/
   $stid = oci_parse($connection, 'SELECT * FROM books WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
   oci_execute($stid);
-  echo "<table border='1'>\n";
+  /*echo "<table border='1'>\n";
   while($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULL)){
     echo "<tr>\n";
     foreach ($row as $item){
@@ -23,8 +23,12 @@
       
     }
     echo "</tr>\n";
+  }*/
+  while($obj = $stid->fetch_object())
+  {
+    echo '<img src="$obj"->IMAGE_URL_L>';
   }
-  echo "</table>\n";
+  //echo "</table>\n";
   
     
   
