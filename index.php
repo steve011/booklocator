@@ -24,7 +24,7 @@
     }
     echo "</tr>\n";
   }*/
-  while($obj = $stid->fetch_object())
+  while($row = oci_fetch_array($stid))
   {
     echo $obj->IMAGE_URL_L;
   }
