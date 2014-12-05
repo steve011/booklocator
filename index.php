@@ -26,7 +26,7 @@
   }*/
   while($obj = $stid->fetch_object())
   {
-    echo '<img src="$obj"->IMAGE_URL_L>';
+    echo $obj->IMAGE_URL_L;
   }
   //echo "</table>\n";
   
