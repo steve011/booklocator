@@ -67,7 +67,7 @@
 			</div>	
 		</div>
 		<div class="container" style="margin-top:20px;">
-			<div class="row" style="background-color:#ff3300;">
+			<div class="row" style="">
 					<h1 style="text-align:center;">Highest Rated</h1>
 					<?php
 					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT ISBN FROM Ratings WHERE book_rating = 10) NATURAL JOIN Books WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
