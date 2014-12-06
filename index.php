@@ -32,7 +32,7 @@
 		<br></br>
 		<div class="container" style="margin-top:20px;">
 			<div class="row" style="">
-					<h1 style="text-align:center;">New Arrivals</h1>
+					<h1 style="text-align:center;">Random Books</h1>
 					<?php
 					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
@@ -50,42 +50,38 @@
 		</div>
 		<div class="container" style="margin-top:20px;">
 			<div class="row" style="background-color:#ff3300;">
-					<h1 style="text-align:center;">Categories</h1>
-					<div class="col-xs-2" style="height:300px;background-color:#00ccff;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#00ccff;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#00ccff;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#00ccff;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#00ccff;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
+					<h1 style="text-align:center;">Newest Arrivals</h1>
+					<?php
+					 $stid = oci_parse($connection, 'SELECT DISTINCT title FROM BOOKS WHERE YEAR_OF_PUBLICATION >= 2013 WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
+  					{
+  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
+  					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
+					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
+					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
+					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
+					echo '</div></div>';
+					}
+					 ?>
+			</div>	
+		</div>
+		<div class="container" style="margin-top:20px;">
+			<div class="row" style="background-color:#ff3300;">
+					<h1 style="text-align:center;">Highest Rated</h1>
+					<?php
+					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
+  					{
+  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
+  					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
+					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
+					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
+					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
+					echo '</div></div>';
+					}
+					 ?>
 			</div>	
 		</div>
 		<footer>
