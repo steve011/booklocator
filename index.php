@@ -52,7 +52,8 @@
 			<div class="row" style="background-color:#ff3300;">
 					<h1 style="text-align:center;">Newest Arrivals</h1>
 					<?php
-					 $stid = oci_parse($connection, 'SELECT DISTINCT title FROM BOOKS WHERE YEAR_OF_PUBLICATION >= 2013 WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 $stid = oci_parse($connection, 'SELECT * FROM BOOKS WHERE YEAR_OF_PUBLICATION >= 2013 WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
