@@ -45,41 +45,6 @@
 					echo '</div></div>';
 					}
 					 ?>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
 			</div>	
 		</div>
 		<div class="container" style="margin-top:20px;">
