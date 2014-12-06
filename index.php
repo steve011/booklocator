@@ -13,7 +13,7 @@
 			<div class="container" style="height:150px;">
 				<div class="row" style="">
 					<div class="col-xs-8 col-xs-push-2" style="height:100%;background-color:#1ad2ff;z-index:2;border: 3px solid black;border-radius:10px;margin-top:-5px;">
-						<img style="float:left;" src="book-logo.jpg" style="margin-top:10%;width:100%:height:auto;">
+						<img style="float:left;" src="http://i.imgur.com/UX50fa2.jpg" style="margin-top:10%;width:100%:height:auto;">
 						<h1 style="font-family:cursive;font-weight:bold;text-align:center;font-style:italic;margin-top:25px;letter-spacing:2px;color:white">BOOK LOCATOR</h1>
 					</div>
 				</div>
