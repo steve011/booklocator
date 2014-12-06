@@ -34,7 +34,7 @@
 			<div class="row" style="">
 					<h1 style="text-align:center;">New Arrivals</h1>
 					<?php
-					 $stid = oci_parse($connection, 'SELECT * FROM book WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
