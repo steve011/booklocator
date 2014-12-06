@@ -38,7 +38,8 @@
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
-  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("http://i.imgur.com/pV1XQjk.jpg");background-size:100% 100%;>';
+  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
+  					echo '<img style="z-index:1;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
 					echo '<img style="z-index:2;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
