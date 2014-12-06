@@ -40,8 +40,8 @@
   					{
   					echo '<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">';
 					echo '<img style="height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
-					echo '<div class="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">';
-					echo '<p style="font-size:12px">'.htmlentities($row["TITLE"]).'</p>';
+					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
+					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
 					echo '</div></div>';
 					}
 					 ?>
