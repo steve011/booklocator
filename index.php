@@ -15,7 +15,7 @@
     Just use $connection instead; the variable is intialized in connect.php, which is included above.*/
   
   
-  $stid = oci_parse($connection, 'SELECT * FROM books WHERE ROWNUM <= 5 ORDER BY DBMS_RANDOM.RANDOM'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+  $stid = oci_parse($connection, 'SELECT * FROM books ORDER BY DBMS_RANDOM.RANDOM WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
   oci_execute($stid);
   while($row = oci_fetch_array($stid))
   {
