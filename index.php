@@ -31,14 +31,14 @@
 		</header>
 		<br></br>
 		<div class="container" style="margin-top:20px;">
-			<div class="row" style="background-color:#ffcc00;">
+			<div class="row" style="">
 					<h1 style="text-align:center;">New Arrivals</h1>
 					<?php
 					 $stid = oci_parse($connection, 'SELECT * FROM books WHERE ROWNUM <= 5 ORDER BY DBMS_RANDOM.RANDOM'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
-  					echo '<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">';
+  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;">';
 					echo '<img style="height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
