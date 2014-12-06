@@ -52,9 +52,9 @@
 			<div class="row" style="background-color:#ff3300;">
 					<h1 style="text-align:center;">Newest Arrivals</h1>
 					<?php
-					 $stid2 = oci_parse($connection, 'SELECT * FROM BOOKS WHERE YEAR_OF_PUBLICATION >= 2013 WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
-					 oci_execute($stid2);
-  					while($row = oci_fetch_array($stid2))
+					 $stid = oci_parse($connection, 'SELECT * FROM BOOKS WHERE YEAR_OF_PUBLICATION >= 2013 ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
   					{
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
