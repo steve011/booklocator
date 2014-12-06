@@ -29,6 +29,7 @@
 				</div>
 			</div>
 		</header>
+		<br></br>
 		<div class="container" style="margin-top:20px;">
 			<div class="row" style="background-color:#ffcc00;">
 					<h1 style="text-align:center;">New Arrivals</h1>
