@@ -65,7 +65,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
           // the row returned must have username and password equal to those supplied 
           // in the form, or it wouldn't be returned.
           
+          if (isset($_POST['remember'])) {
+               /* Set cookie to last 1 year */
+               setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), time()+60*60*24*365, 'www.UNI.edu.au');
           
+          } else {
+               /* Cookie expires when browser closes */
+               setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
+          }
           header('Location: index.php');
                
      } else {
