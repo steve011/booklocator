@@ -15,8 +15,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      
      
      // Login
-     $dbuser="user";
-     $dbpass="pass";
+     $dbuser="USERNAME";
+     $dbpass="PASSWRD";
      $db="db";
      
      // extract all the form fields and store them in variables
@@ -67,13 +67,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
           
           if (isset($_POST['remember'])) {
                /* Set cookie to last 1 year */
-               setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['password']), time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('username', $_POST['USERNAME'], time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['PASSWORD']), time()+60*60*24*365, 'www.UNI.edu.au');
           
           } else {
                /* Cookie expires when browser closes */
-               setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
+               setcookie('username', $_POST['USERNAME'], false, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['PASSWORD']), false, 'www.UNI.edu.au');
           }
           header('Location: index.php');
                
