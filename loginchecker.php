@@ -7,17 +7,10 @@ if (isset($_COOKIES['username']) && isset($_COOKIES['security'])) {
      // Check Login
      $dbuser="user";
      $dbpass="pass";
-     $db="db";
-     //Connect to DB
-     $connect = OCILogon($dbuser, $dbpass, $db);
-     if (!$connect) {
-          echo "An error has occured connecting to the database";
-          exit;
-     }
-     // 
-     $query = "SELECT password FROM MEMBERS WHERE username = '".$username."'";
+     
+     $query = "SELECT password FROM USERS WHERE username = '".$username."'";
      //Store resultsof select query
-     $result = OCIParse($connect, $query);
+     $result = OCIParse($connection, $query);
      //Just check 
      //$sql = OCIParse($connect, $query);
      if(! $result) {
