@@ -65,3 +65,6 @@
 		</div>
 		</body>
 		</html>
+<?php 
+oci_close($connection);
+?>
