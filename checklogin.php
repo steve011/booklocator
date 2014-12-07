@@ -11,13 +11,13 @@
 <?php
 
 // check to see if they are set before using them.
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['USERNAME']) && isset($_POST['PASSWORD'])) {
      
      
      // Login
      $dbuser="USERNAME";
      $dbpass="PASSWORD";
-     $db="db";
+     $db="sw5";
      
      // extract all the form fields and store them in variables
      $username=$_POST['username'];
