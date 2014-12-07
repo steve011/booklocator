@@ -7,7 +7,7 @@
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
 
-$query="SELECT * FROM users WHERE username='".$myusername."' and password= '".$mypassword."' ";
+$query="SELECT * FROM users WHERE username=".$myusername." and password= ".$mypassword;
 //echo($query);
  $stid = oci_parse($connection, $query);
 
