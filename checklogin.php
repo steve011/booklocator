@@ -3,12 +3,6 @@
 
 <?php
 
-// Connect to server and check for errors.
-if (!$conn) {
-   $e = oci_error();
-   print htmlentities($e['message']);
-   exit;
- }
 
 
 // username and password sent from form
