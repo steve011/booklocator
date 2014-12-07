@@ -17,7 +17,7 @@ if (isset($_POST['USERNAME']) && isset($_POST['PASSWORD'])) {
      // Login
      $dbuser="USERNAME";
      $dbpass="PASSWORD";
-     $db="sw5";
+     $db="db";
      
      // extract all the form fields and store them in variables
      $username=$_POST['username'];
