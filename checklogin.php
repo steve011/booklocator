@@ -23,13 +23,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $password=$_POST['password'];
      $remember=$_POST['remember'];
      
-
-     
-     if ($connection) {
-          echo "An error has occured connecting to the database";
-          exit;
-     }
-     
      // 
      $query = "SELECT * from USERS WHERE username='".$username."' and password='".$password."'";
      
