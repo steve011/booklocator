@@ -24,6 +24,7 @@
 								<li><a href="collections.html">Store<a></li>
 								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Search</a></li>
 								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Support</a></li>
+								<li><a href="login.php">Login</a></li>
 							</ul>
 					</div>
 				</div>
