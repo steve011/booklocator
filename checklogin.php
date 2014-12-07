@@ -24,60 +24,30 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $remember=$_POST['remember'];
      
      // 
-     $query = "SELECT * from USERS WHERE username='".$username."' and password='".$password."'";
+     $query = "SELECT * from USERS";
      
-     //Store resultsof select query
-     $result = OCIParse($connection, $query);
+     $stid = OCIParse($connection, $query);
      
-     //Just check 
-     //$sql = OCIParse($connect, $query);
-     if(! $result) {
+    
+     if(! $stid) {
           echo "An error occurred in parsing the sql string '$query'.\n";
           exit;
      }
      
-     $r = OCIExecute($result);
-     
-     if(! $r) {
-          echo "An error occurred in executing the sql '$query'.\n";
-          exit;
-     }
-     
-     /*
-     $tmpcount = OCIFetch($result); 
-     // COunt Rows
-     //$Count = OCIRowCount($tmpcount);
-     
-     if ($tmpcount==1){
-     */
-     
-     $count = OCIRowCount($result);
-     
-     if ($count == 1) {
-          // the row returned must have username and password equal to those supplied 
-          // in the form, or it wouldn't be returned.
-          
-          if (isset($_POST['remember'])) {
-               /* Set cookie to last 1 year */
-               setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['password']), time()+60*60*24*365, 'www.UNI.edu.au');
-          
-          } else {
-               /* Cookie expires when browser closes */
-               setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
+     $count = 0;
+     OCIExecute($stid);
+     while($row = oci_fetch_array($stid) && count === 0)
+     {
+          if($row["USERNAME"] === $username && $row["PASSWORD"] === $password)
+          {
+               header('Location: index.php');
           }
-          header('Location: index.php');
-               
-     } else {
-          //echo 'Username/Password Invalid';
           header('Location: login.php?msg=1');
      }
-          
-} else {
-echo 'You must supply a username and password.';
-}
-//End Cookie script
+     
+     
+     
+     
 
 ?>
 </body>
