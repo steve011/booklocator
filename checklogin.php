@@ -4,7 +4,6 @@
 <?php
 
 // Connect to server and check for errors.
-$conn = oci_connect('inventory', 'tiger', 'XE');
 if (!$conn) {
    $e = oci_error();
    print htmlentities($e['message']);
@@ -16,7 +15,7 @@ if (!$conn) {
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
 
-$query="SELECT * FROM members WHERE username='".$myusername."' and password= '".$mypassword."' ";
+$query="SELECT * FROM users WHERE username='".$myusername."' and password= '".$mypassword."' ";
 //echo($query);
  $stid = oci_parse($conn, $query);
 
