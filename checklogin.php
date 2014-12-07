@@ -11,28 +11,27 @@
 <?php
 
 // check to see if they are set before using them.
-if (isset($_POST['USERNAME']) && isset($_POST['PASSWORD'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {
      
      
      // Login
-     $dbuser="USERNAME";
-     $dbpass="PASSWORD";
-     $db="db";
+     $dbuser="username";
+     $dbpass="password";
      
      // extract all the form fields and store them in variables
      $username=$_POST['username'];
      $password=$_POST['password'];
      $remember=$_POST['remember'];
      
-     //Connect to DB
+
      
-     if (!$connection) {
+     if ($connection) {
           echo "An error has occured connecting to the database";
           exit;
      }
      
      // 
-     $query = "SELECT * from users WHERE username='".$username."' and password='".$password."'";
+     $query = "SELECT * from USERS WHERE username='".$username."' and password='".$password."'";
      
      //Store resultsof select query
      $result = OCIParse($connection, $query);
@@ -67,13 +66,13 @@ if (isset($_POST['USERNAME']) && isset($_POST['PASSWORD'])) {
           
           if (isset($_POST['remember'])) {
                /* Set cookie to last 1 year */
-               setcookie('username', $_POST['USERNAME'], time()+60*60*24*365, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['PASSWORD']), time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), time()+60*60*24*365, 'www.UNI.edu.au');
           
           } else {
                /* Cookie expires when browser closes */
-               setcookie('username', $_POST['USERNAME'], false, 'www.UNI.edu.au');
-               setcookie('security', md5($_POST['PASSWORD']), false, 'www.UNI.edu.au');
+               setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
           }
           header('Location: index.php');
                
