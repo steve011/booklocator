@@ -14,7 +14,6 @@ $query="SELECT * FROM users WHERE username=".$myusername." and password= ".$mypa
 //oci_bind_by_name($stid, ":us", $username);
 //oci_bind_by_name($stid, ":pw", $password);
 
-$result=oci_execute($stid);
 //echo($result);
 
 // Mysql_num_row is counting table row
