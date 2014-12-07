@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php
-
 // check to see if they are set before using them.
 if (isset($_POST['username']) && isset($_POST['password'])) {
      
@@ -24,36 +23,65 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $remember=$_POST['remember'];
      
      // 
-     $query = "SELECT * from USERS";
+     $query = "SELECT * from USERS WHERE username='".$username."' and password='".$password."'";
      
-     $stid = OCIParse($connection, $query);
+     //Store resultsof select query
+     $result = OCIParse($connection, $query);
      
-    
-     if(! $stid) {
+     //Just check 
+     //$sql = OCIParse($connect, $query);
+     if(! $result) {
           echo "An error occurred in parsing the sql string '$query'.\n";
           exit;
      }
      
-     $count = 0;
-     OCIExecute($stid);
-     while($row = oci_fetch_array($stid) && count === 0)
-     {
-          if($row["USERNAME"] === $username && $row["PASSWORD"] === $password)
-          {
-               header('Location: index.php');
-          }
-          header('Location: login.php?msg=1');
+     $r = OCIExecute($result);
+     
+     if(! $r) {
+          echo "An error occurred in executing the sql '$query'.\n";
+          exit;
      }
      
+     /*
+     $tmpcount = OCIFetch($result); 
+     // COunt Rows
+     //$Count = OCIRowCount($tmpcount);
      
+     if ($tmpcount==1){
+     */
      
+     $count = OCIRowCount($result);
      
-
-?>
-<?php 
-oci_close($connection);
+     if ($count == 1) {
+          // the row returned must have username and password equal to those supplied 
+          // in the form, or it wouldn't be returned.
+          
+          if (isset($_POST['remember'])) {
+               /* Set cookie to last 1 year */
+               setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), time()+60*60*24*365, 'www.UNI.edu.au');
+          
+          } else {
+               /* Cookie expires when browser closes */
+               setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
+               setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
+          }
+          header('Location: index.php');
+               
+     } else {
+          //echo 'Username/Password Invalid';
+          header('Location: login.php?msg=1');
+     }
+          
+} else {
+echo 'You must supply a username and password.';
+}
+//End Cookie script
 ?>
 </body>
 </html>
 
 
+<?php 
+oci_close($connection);
+?>
