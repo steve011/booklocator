@@ -3,8 +3,6 @@
 
 <?php
 
-
-
 // username and password sent from form
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
