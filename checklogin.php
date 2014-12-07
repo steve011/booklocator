@@ -50,10 +50,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      
 
 ?>
+<?php 
+oci_close($connection);
+?>
 </body>
 </html>
 
 
-<?php 
-oci_close($connection);
-?>
