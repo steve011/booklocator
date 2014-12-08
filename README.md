@@ -1,6 +1,11 @@
 Book Locator
 =======
-
+<h3>Recent Changes</h3>
+<ul>
+<li>Database updated: use search to see the added attributes</li>
+<li>Had to change query for "Newest Arrivals". The datatype for YEAR_OF_Publication was changed to DATE and no longer worked when being compared against an integer.</li>
+</ul>
+=======
 CIS4301 DB Project
 
 
