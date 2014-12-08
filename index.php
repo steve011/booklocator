@@ -52,7 +52,7 @@ session_start();
 					echo '</div></div></a>';
 					}
 					foreach($_SESSION['product'] as $key=>$val){
-						header('Location: product.php);
+						header('Location: product.php');
 					}
 					 ?>
 			</div>	
