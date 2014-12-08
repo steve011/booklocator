@@ -1,13 +1,14 @@
 #!/usr/local/bin/php
 <?php require ('../connect.php'); ?>
-
-<?php
+<?php 
 $loggedIn = false;
 if (isset($_COOKIES['username']) && isset($_COOKIES['security'])) {
      // Check Login
-     $dbuser="user";
-     $dbpass="pass";
-     
+     if (!$connection) {
+          echo "An error has occured connecting to the database";
+          exit;
+     }
+     // 
      $query = "SELECT password FROM USERS WHERE username = '".$username."'";
      //Store resultsof select query
      $result = OCIParse($connection, $query);
@@ -40,8 +41,6 @@ if (isset($_COOKIES['username']) && isset($_COOKIES['security'])) {
 if (!$loggedIn) {
      header("Location: {login.php}");
 }          
-?>
-
 <?php 
 oci_close($connection);
 ?>
