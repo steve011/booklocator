@@ -20,8 +20,8 @@
 				<Div class="row">
 					<div class="col-xs-6 col-xs-push-3 menu-bar" style="background-color:#ff471a;z-index:1;">
 							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="collections.html">Store<a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="collections.php">Store<a></li>
 								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Search</a></li>
 								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Support</a></li>
 								<li><a href="login.php">Login</a></li>
