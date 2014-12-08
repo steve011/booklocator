@@ -105,12 +105,6 @@ if ($searching == "Books"
 			
 	
 			while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
-				print '<tr>';
-				foreach ($row as $item) {
-						<h1 style="text-align:center;">Random Books</h1>
-					<?php
-					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
-					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
@@ -120,7 +114,6 @@ if ($searching == "Books"
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
 					echo '</div></div>';
 					}
-				}
 			}
 		}
 		else{
