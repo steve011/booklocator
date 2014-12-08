@@ -43,14 +43,25 @@ session_start();
   					{
   					$isbn = $row["ISBN"];
   					$_SESSION['product'] = $row;
-  					echo '<form method="get" action="product.php"><input type=:"hidden" name="products" value="product-id"><input type="submit">';
+  					}
+  					foreach($_SESSION['product'] as $key)
+  					{
+  						 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
+  					{ $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
+  					{
+  					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;;background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
-					echo '</div></div></form>';
+					echo '</div></div></a>';
   					}
+					}
 					 ?>
 			</div>	
 		</div>
@@ -99,4 +110,3 @@ oci_close($connection);
 		
 	</body>
 </html>
-
