@@ -54,15 +54,6 @@
     </tr>
 </table>
 
-<p>
-<form method="post" action="<?=$PHP_SELF?>">
-Enter SQL Command: <br><textarea cols="65" rows="5" name="my_query">
-SELECT [] FROM [] WHERE [] GROUP BY [] HAVING [] ORDER BY []
-UPDATE [] SET [] WHERE []
-ALTER TABLE [] {ADD, MODIFY, DROP, RENAME...} </textarea><br>
-<input type="hidden" name="searching" value="Query" />
-<input type="submit"  />
-</form> 
 </div></div></div>
 
 <div class="container" style="margin-top:20px;">
