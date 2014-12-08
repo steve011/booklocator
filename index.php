@@ -1,5 +1,8 @@
 #!/usr/local/bin/php
-<?php require ('../connect.php'); ?>
+<?php 
+require ('../connect.php');
+session_start();
+?>
 
 <html>
 	<head>
@@ -39,12 +42,15 @@
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
+  					$isbn = $row["ISBN"];
+  					$SESSION['ISBN'] = $isbn;
+  					echo '<a href="product.php?ISBN=$isbn">'
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
-					echo '</div></div>';
+					echo '</div></div></a>';
 					}
 					 ?>
 			</div>	
