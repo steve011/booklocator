@@ -94,7 +94,9 @@ if ($searching == "Books")
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 			$query .= " AND ROWNUM <= 1000";
 		}
-		$stid = oci_parse($connection, "$query");	
+		$stid = oci_parse($connection, "$query");
+	
+		if(oci_execute($stid)){	
 			oci_execute($stid_count);
 			$count = current(oci_fetch_array($stid_count, OCI_RETURN_NULLS+OCI_ASSOC));
 			
@@ -111,6 +113,10 @@ if ($searching == "Books")
 					echo '</div></div>';
 					}
 			}
+		}
+		else{
+			echo "<p>Invaid query, please try again.";
+		}
 		oci_free_statement($stid);
 }
 oci_close($connection);
