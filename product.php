@@ -34,9 +34,11 @@ session_start();
 		</header>
 		<div class="container">
 			<div class="row" style="">
-				<div class="col-xs-4" style="height:440px;background-color:blue;padding-top:20px;">
-					<div style="height:400px;background-color:cyan;">
-
+			<?php
+			$row = $_SESSION['ISBN'];
+				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;">';
+					echo '<img src="'.htmlentities($row["IMAGE_URL_L"]).'style="height:400px;width:auto;">';
+			?>
 					</div>
 				</div>
 				<div class="col-xs-8" style="height:440px;background-color:red;padding-top:20px;">
@@ -55,6 +57,7 @@ Mei soleat democritum mediocritatem an, saperet ornatus et nec, nulla eirmod scr
 						</div>
 					</div>
 				</div>
+			?>
 				<div class="col-xs-12" style="background-color:yellow;height:670px;margin-top:20px;">
 					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
 
