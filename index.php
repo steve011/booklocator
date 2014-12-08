@@ -43,7 +43,7 @@ session_start();
   					while($row = oci_fetch_array($stid))
   					{
   					$isbn = $row["ISBN"];
-  					$SESSION['ISBN'] = $row;
+  					$SESSION['product'] = $row;
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
