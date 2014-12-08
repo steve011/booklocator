@@ -73,8 +73,8 @@ $my_query = $_POST["my_query"];
 $find = $_POST["find"];
 $field = $_POST["field"];
 $searching = $_POST["searching"]; 
-if ($searching == "Books"
-	) { 
+if ($searching == "Books") 
+{ 
 		$find = strtoupper($find); 
 		$find = strip_tags($find); 
 		$find = trim ($find); 
@@ -93,7 +93,7 @@ if ($searching == "Books"
 		else{
 			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%'";
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
-			$query .= " AND ROWNUM <= 1000";
+			$query = " AND ROWNUM <= 1000";
 		}
 
 		$stid = oci_parse($connection, "$query");
