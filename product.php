@@ -1,3 +1,9 @@
+#!/usr/local/bin/php
+<?php 
+require ('../connect.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,11 +22,12 @@
 					</div>
 					<div class="col-xs-8 col-xs-push-2 menu-bar">
 							<ul>
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Store<a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Support</a></li>
-							</ul>x
+								<li><a href="index.php">Home</a></li>
+								<li><a href="collections.php">Store<a></li>
+								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Search</a></li>
+								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Support</a></li>
+								<li><a href="login.php">Login</a></li>
+							</ul>
 					</div>
 				</div>
 			</div>
