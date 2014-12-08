@@ -55,7 +55,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      if ($count == 1) {
           // the row returned must have username and password equal to those supplied 
           // in the form, or it wouldn't be returned.
-          
+          session_start();
+          $_SESSION['username'] = $username;
           if (isset($_POST['remember'])) {
                /* Set cookie to last 1 year */
                setcookie('username', $_POST['username'], time()+60*60*24*365, 'www.UNI.edu.au');
