@@ -15,12 +15,13 @@ session_start();
 	<body>
 		<header>
 			<div class="container" style="height:150px;">
-				<div class="row">
-					<div class="col-xs-2" style="height:100px;background-color:#00ccff;background-image:url('book-logo.jpg');background-size-y:100%;background-repeat:no-repeat;z-index:2">
+				<div class="row" style="">
+					<div class="col-xs-8 col-xs-push-2" style="height:100%;background-color:#1ad2ff;z-index:2;border: 3px solid black;border-radius:10px;margin-top:-5px;">
+						<h1 style="font-family:cursive;font-weight:bold;text-align:center;font-style:italic;margin-top:25px;letter-spacing:2px;color:white">BOOK LOCATOR</h1>
 					</div>
-					<div class="col-xs-10" style="height:100px;background-color:#00ccff;z-index:2">
-					</div>
-					<div class="col-xs-8 col-xs-push-2 menu-bar">
+				</div>
+				<Div class="row">
+					<div class="col-xs-6 col-xs-push-3 menu-bar" style="background-color:#ff471a;z-index:1;">
 							<ul>
 								<li><a href="index.php">Home</a></li>
 								<li><a href="collections.php">Store<a></li>
@@ -37,11 +38,11 @@ session_start();
 			<?php
 			$row = $_SESSION['product'];
 				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;">';
-					echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:400px;width:auto;">';
+					echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:400px;width:100%;">';
 			?>
 					</div>
 				</div>
-				<div class="col-xs-8" style="height:440px;background-color:red;padding-top:20px;">
+				<div class="col-xs-7" style="height:440px;background-color:red;padding-top:20px;float:right;">
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
 						<h2 style="text-align:center;">Product Title</h2>
 						<div style="text-align:left;width:100%;color:white;">
