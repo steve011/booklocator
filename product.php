@@ -40,9 +40,8 @@ session_start();
 				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;float:left;">';
 					echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:400px;width:100%;">';
 			?>
-					</div>
 				</div>
-				<div class="col-xs-7" style="height:440px;background-color:red;padding-top:20px;float:right;">
+				<div class="col-xs-8" style="height:440px;background-color:red;padding-top:20px;float:right;">
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
 						<h2 style="text-align:center;">Product Title</h2>
 						<div style="text-align:left;width:100%;color:white;">
