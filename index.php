@@ -53,7 +53,7 @@
 			<div class="row" style="">
 					<h1 style="text-align:center;">Newest Arrivals</h1>
 					<?php
-					 $stid = oci_parse($connection, 'SELECT * FROM BOOKS ORDER BY YEAR_OF_PUBLICATION AND ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM BOOKS ORDER BY YEAR_OF_PUBLICATION) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
