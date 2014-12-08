@@ -82,25 +82,3 @@ Mei soleat democritum mediocritatem an, saperet ornatus et nec, nulla eirmod scr
 	</body>
 </html>
 
-
-<style>
-	.menu-bar
-	{
-		height:60px;
-		margin-top:-20px;
-		padding-top:15px;
-		border-radius:20px;
-		border: 2px solid black;
-	}
-	.menu-bar ul li{display:inline-block;padding-left:10.25%;}
-	.menu-bar ul li a{font-size:24px;text-decoration:none;font-family:cursive;}
-
-	 .add-to-cart
-  {
-    background-color:navy;
-    font-weight:bold;
-    color:white;
-    border:none;
-  }
-
-</style>
