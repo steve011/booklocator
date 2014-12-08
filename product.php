@@ -57,7 +57,6 @@ Mei soleat democritum mediocritatem an, saperet ornatus et nec, nulla eirmod scr
 						</div>
 					</div>
 				</div>
-			?>
 				<div class="col-xs-12" style="background-color:yellow;height:670px;margin-top:20px;">
 					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
 
