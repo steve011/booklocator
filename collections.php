@@ -118,7 +118,6 @@ if ($searching == "Books"
 		else{
 			echo "<p>Invaid query, please try again.";
 		}
-		print '</table>';
 		oci_free_statement($stid);
 }
 oci_close($connection);
