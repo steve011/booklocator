@@ -65,6 +65,9 @@ ALTER TABLE [] {ADD, MODIFY, DROP, RENAME...} </textarea><br>
 </form> 
 </div></div></div>
 
+<div class="container" style="margin-top:20px;">
+	<div class="row" style="">
+
 <?php 
 $my_query = $_POST["my_query"];
 $find = $_POST["find"];
@@ -92,39 +95,32 @@ if ($searching == "Books"
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 			$query .= " AND ROWNUM <= 1000";
 		}
-	
-		echo "<h2>Results</h2><p>"; 
-		
-		echo "<h4>$query</h4><p>";
-	
-		print '<table border="1">';
-	
+
 		$stid = oci_parse($connection, "$query");
 	
 		if(oci_execute($stid)){	
-			print '<tr>';
-			echo "<p><b> Results found: "; 
 			oci_execute($stid_count);
 			$count = current(oci_fetch_array($stid_count, OCI_RETURN_NULLS+OCI_ASSOC));
-			echo "$count</b><p>";
-			print '</tr>';
 			
-			if($count){
-				$ncols = oci_num_fields($stid);
-				print '<tr>';
-				for ($i = 1; $i <= $ncols; $i++) {
-					$column_name  = oci_field_name($stid, $i);
-					echo "<td><b>$column_name</b></td>";
-				}
-				print '</tr>';
-			}
+			
 	
 			while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
 				print '<tr>';
 				foreach ($row as $item) {
-						print '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+						<h1 style="text-align:center;">Random Books</h1>
+					<?php
+					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					 oci_execute($stid);
+  					while($row = oci_fetch_array($stid))
+  					{
+  					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
+  					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
+					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
+					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
+					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
+					echo '</div></div>';
+					}
 				}
-				print '</tr>';
 			}
 		}
 		else{
@@ -137,84 +133,3 @@ oci_close($connection);
 ?>
 
 </body></html>
-
-
-
-
-	<body>
-		<div class="container" style="margin-top:20px;">
-			<div class="row" style="background-color:#ffcc00;">
-					<h1 style="text-align:center;">Collection Title</h1>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-					<div class="col-xs-2" style="height:300px;background-color:#ff004d;margin:19.5px;">
-						<div style="height:250px;width:100%;"></div>
-						<div style="height:50px;width:100%;text-align:center;color:white;border-top:1px solid black;">
-							<p>Product Name</p>
-							<p>{{ Price }}</p>
-						</div>
-					</div>
-			</div>	
-		</div>
-	</body>
