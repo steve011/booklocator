@@ -1,9 +1,17 @@
 #!/usr/local/bin/php
 <?php require ('../connect.php'); ?>
 
-<html><head><title>PHP Test</title></head>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css">
+	<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
 <body>
-
+<div class="container" style="margin-top:20px;">
+<div class="row">
+<div class="col-xs-8 col-xs-push-2">
 <h2>Search</h2>
 <table CELLSPACING=5>
     <tr> 
@@ -33,7 +41,7 @@ ALTER TABLE [] {ADD, MODIFY, DROP, RENAME...} </textarea><br>
 <input type="hidden" name="searching" value="Query" />
 <input type="submit"  />
 </form> 
-
+</div></div></div>
 
 <?php 
 $my_query = $_POST["my_query"];
@@ -110,12 +118,7 @@ oci_close($connection);
 
 
 
-<head>
-		<link rel="stylesheet" type="text/css" href="bootstrap.css">
-		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css">
-		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	</head>
+
 	<body>
 		<header>
 			<div class="container" style="height:150px;">
@@ -137,27 +140,8 @@ oci_close($connection);
 				</div>
 			</div>
 		</header>
-		<div class="container" style="margin-top:20px;">
-			<div class="row">
-			<div class="col-xs-8 col-xs-push-2"
-				<h1 style="text-align:center;">Filters</h1>
-				<div class="col-xs-2">
-				<form id="filter-genre" action="collections.php" method="post" accept-charset="UTF-8">
-				<fieldset>
-					<Legend>Genre</legend>
-					<input type="radio" name="genre" value="Non-Fiction">Non-Fiction
-					<input type="radio" name="genre" value="Fiction">Fiction
-					<input type="radio" name="genre" value="Textbook">Textbook
-					<input type="radio" name="genre" value="Science">Science
-					<input type="radio" name="genre" value="History">History
-					<input type="radio" name="genre" value="Math">Math
-					<input type="radio" name="genre" value="Computers">Computers
-				</fieldset>
-				</form>
-				</div>
-			</div>	
-			</div>
-		</div>
+		
+		
 		<div class="container" style="margin-top:20px;">
 			<div class="row" style="background-color:#ffcc00;">
 					<h1 style="text-align:center;">Collection Title</h1>
