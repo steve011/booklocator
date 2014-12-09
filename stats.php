@@ -11,7 +11,6 @@ session_start();
 <h2>Search</h2>
 
 <?php
-	<?php
 	$stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM BOOKS ORDER BY YEAR_OF_PUBLICATION) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
