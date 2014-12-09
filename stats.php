@@ -83,7 +83,7 @@ session_start();
 </div>
 
 <div class="col-xs-4">
-<h2>Perfect Rated Books</h2>
+<h2>Total Ratings</h2>
 <?php
 	$stid = oci_parse($connection, 'SELECT COUNT(*), book_rating FROM RATINGS GROUP BY book_rating ORDER BY book_rating DESC'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
