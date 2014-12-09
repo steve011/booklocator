@@ -54,6 +54,7 @@ session_start();
      }
      ?>
      <form name="form1" method="post" action="checklogin.php">
+     <h1>Log In: </h1>
      <p>
           <label>
           <br></br>
