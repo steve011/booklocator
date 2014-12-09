@@ -71,7 +71,7 @@ session_start();
 							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
 							<p style = "text-align: left;"><b>Date published:</b> <?php echo $row['YEAR_OF_PUBLICATION']?></p>
 							<p style= "text-align: left;"><b> Publisher:</b> <?php echo $row['PUBLISHER']?> | <b>Binding: </b><?php echo $row['BINDING']?> |<b> Pages: </b><?php echo $row['PAGES']?> | <b>Language</b><?php echo $row['LANGUAGE']?></p>
-							<h4 style = "text-align: left;"><b>Average User Rating:</b> <?php echo $row['RATING']['AVERAGE_RATING']?></h4> <b> out of <?php <?php echo $row['RATING']['NUMBER_OF_RATINGS'];?> users <b>
+							<h4 style = "text-align: left;"><b>Average User Rating:</b> <?php echo $row['RATING']['AVERAGE_RATING'];?></h4> <b> out of <?php echo $row['RATING']['NUMBER_OF_RATINGS'];?> users <b>
 						</div>
 					</div>
 				</div>
