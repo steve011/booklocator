@@ -16,6 +16,9 @@ session_start();
   	while($row = oci_fetch_array($stid))
   	{
   		echo $row['COUNT(*)'];
+  		echo "   :   ";
+  		echo $row['LOCATION'];
+  		echo '<br></br>';
 	}
 ?>
 <?php
