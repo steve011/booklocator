@@ -6,7 +6,7 @@ session_start();
 
 			//echo '<h1>', $_GET['Product'], '</h1>';
 			//echo '<h1>', $_SESSION["product"], '</h1>';
-			print_r($_SESSION);
+			//print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ session_start();
 			<div class="row" style="">
 			<?php
 
-			$row = $_SESSION['Product'];
+			$row = $_SESSION[$_GET['Product']];
 				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;float:left;">';
 					echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:400px;width:100%;">';
 			?>
