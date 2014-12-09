@@ -130,8 +130,9 @@ session_start();
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div>';
-					}
 					*/
+					}
+					
 					 ?>
 			</div>	
 		</div>
