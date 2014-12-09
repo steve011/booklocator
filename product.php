@@ -73,7 +73,7 @@ session_start();
 					<?php  
 						$iframe_url = $row['REVIEW_IFRAME_URL'];
 						$iframe_url = str_replace("exp=2014-12-08", "exp=2015-12-08", $iframe_url);
-						echo '<iframe src="'.$iframe_url.'" style="width:auto;height:600px;"></iframe>';
+						echo '<iframe src="'.$iframe_url.'" style="width:100%;height:100%;"></iframe>';
 					?>
 					<!--
 					</div>
