@@ -56,15 +56,20 @@ session_start();
 	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM USERS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	$row = oci_fetch_array($stid)
-  	echo "Total Users: ".$row['COUNT(*)'];
+  	echo "Total Users: ";
+  	echo $row['COUNT(*)'];
+  	
   	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM BOOKS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	$row = oci_fetch_array($stid)
-  	echo "Total Users: ".$row['COUNT(*)'];
+  	echo "Total Books: ";
+  	$row['COUNT(*)'];
+  	
   	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM RATINGS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	$row = oci_fetch_array($stid)
-  	echo "Total Users: ".$row['COUNT(*)'];
+  	echo "Total Ratings: ";
+  	$row['COUNT(*)'];
   	
 ?>
 </div>
