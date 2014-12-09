@@ -11,7 +11,7 @@ function get_average_rating($isbn, $conn){
   	}
 }
 
-function display_book($row){
+function display_book($row, $connection){
 	$isbn = $row["ISBN"];
 	$_SESSION["$isbn"] = $row;
 	$rating = get_average_rating($row["ISBN"], $connection);
