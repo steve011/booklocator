@@ -6216,6 +6216,7 @@ button.close {
     border: 2px solid black;
   }
   .menu-bar ul li{display:inline-block;padding-left:7.5%;}
+  .menu-bar ul:first-child{padding-left:0px;}
   .menu-bar ul li a{font-size:20px;text-decoration:none;font-family:cursive;}
 
    .add-to-cart
