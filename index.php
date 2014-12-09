@@ -6,9 +6,9 @@ function get_average_rating($isbn){
 	echo "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'";
 	echo $connection;
 	
-	$stid = oci_parse($connection, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
-  	if(oci_execute($stid)){
-  		return current(oci_fetch_array($stid));
+	$avg_stid = oci_parse($connection, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
+  	if(oci_execute($avg_stid)){
+  		return current(oci_fetch_array($avg_stid));
   	}else{
   		return -1;
   	}
