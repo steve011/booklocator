@@ -68,9 +68,9 @@ function get_average_rating($isbn, $conn){
   					while($row = oci_fetch_array($stid))
   					{
   					$isbn = $row["ISBN"];
-  					$_SESSION["$isbn"] = $row; 
-  					
-  					$_SESSION["$isbn"]['RATING'] = get_average_rating($row["ISBN"], $connection);
+  					$_SESSION["$isbn"] = $row;
+  					$rating = get_average_rating($row["ISBN"], $connection);
+  					$_SESSION["$isbn"]['RATING'] = $rating;
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
@@ -79,7 +79,7 @@ function get_average_rating($isbn, $conn){
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
-					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;"> Average Rating: '.htmlentities($row['RATING']['AVERAGE_RATING']).'</p>';
+					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;"> Average Rating: '.htmlentities($rating['AVERAGE_RATING']).'</p>';
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div></a>';
 					}
