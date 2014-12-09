@@ -59,7 +59,7 @@ session_start();
       <img style="height:350px;margin: 10px; width:60%; padding-top: 5px; left:50px; float:right;" src="http://i.imgur.com/Qx1LZF2.jpg">
      <div class="col-xs-4" style="height:350px; margin: 10px; background-color:#ff471a;padding-top: 5px;border: 3px solid black;border-radius:5px;float:center;">
 					<div class="col-xs-12" style="height:310px;background-color:#d8dfea;">
-     <form name="form1" method="post" action="checklogin.php">
+     <form name="form1" method="post" action="checklogin.php<?php (isset($_GET['msg']) && $_GET['msg'] == 2) echo '?msg=2'; ?>">
      <h1>Log In: </h1>
      <p>
           <label>
