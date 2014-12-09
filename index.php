@@ -2,11 +2,11 @@
 <?php 
 require ('../connect.php');
 session_start();
-function get_average_rating($isbn){
+function get_average_rating($isbn, $conn){
 	echo "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'";
 	echo $connection;
 	
-	$avg_stid = oci_parse($connection, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
+	$avg_stid = oci_parse($conn, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
   	if(oci_execute($avg_stid)){
   		return current(oci_fetch_array($avg_stid));
   	}else{
@@ -70,7 +70,7 @@ function get_average_rating($isbn){
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row; 
   					
-  					$avg_rating = get_average_rating($row["ISBN"]);
+  					$avg_rating = get_average_rating($row["ISBN"], $connection);
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
