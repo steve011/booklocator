@@ -48,7 +48,7 @@ session_start();
 					?>
 				</div>
 				<div class="col-xs-8" style="height:490px;background-color:#ff471a;padding-top:20px;float:center;">
-					<div class="col-xs-12" style="height:450px;background-color:#1ad2ff;">
+					<div class="col-xs-12" style="height:450px;background-color:red;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<h4 style="text-align:center;">By: <?php echo $row['AUTHOR'];?></h4>
 						<h4 style ="text-align:center;">Genre: <?php echo $row['GENRE'];?></h4>
