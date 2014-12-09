@@ -52,7 +52,7 @@ session_start();
      if (isset($_GET['msg']) && $_GET['msg'] == 1) {
           echo '<p><strong>Your username and/or password could not be matched to a valid user account</strong></p>';
      }
-     if (isset($_GET['msg']) && $_GET['msg'] == 1) {
+     if (isset($_GET['msg']) && $_GET['msg'] == 2) {
 	echo '<p><strong>Must be logged in as an administrator to access admin page.</strong></p>';
 	}
      ?>
