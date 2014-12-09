@@ -75,7 +75,7 @@ session_start();
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12" style="background-color:#ff471a;height:670px;margin-top:20px;">
+				<div class="col-xs-12" style="background-color:#ff471a;margin-top:20px;">
 					<h3>External Reviews: </h3>
 					 
 					<div class="col-xs-12" style="height:600px;background-color:#1ad2ff;margin-top:10px;">
