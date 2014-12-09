@@ -95,7 +95,7 @@ if ($searching == "Books")
 			else
 			{
 			$query == "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%'";
-			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)' ORDER BY DESC");
+			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query) ORDER BY PRICE DESC");
 			$query .= " AND ROWNUM <= 1000";
 			}
 		}
