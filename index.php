@@ -56,7 +56,9 @@ session_start();
 					 $array = array();
   					while($row = oci_fetch_array($stid))
   					{
+  			
   					$isbn = $row["ISBN"];
+  					$_SESSION[$isbn] = $row; 
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
