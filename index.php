@@ -70,7 +70,7 @@ function get_average_rating($isbn, $conn){
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row; 
   					
-  					$row['RATING'] = get_average_rating($row["ISBN"], $connection);
+  					$_SESSION["$isbn"]['RATING'] = get_average_rating($row["ISBN"], $connection);
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
