@@ -12,8 +12,7 @@ session_start();
 
 <?php 
 $my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;SELECT location,  COUNT(*) FROM USERS GROUP BY location;'
-$searching = "SELECT location,  COUNT(*) FROM USERS GROUP BY location"; f
-	
+$searching = "SELECT location,  COUNT(*) FROM USERS GROUP BY location";
 		$stid_count = 0;
 	
 		if($searching == "Query"){
