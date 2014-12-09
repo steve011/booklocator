@@ -47,8 +47,8 @@ session_start();
 						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:100%;">';
 					?>
 				</div>
-				<div class="col-xs-8" style="background-color:#ff471a;padding-top: 5px;border: 3px solid black;border-radius:5px;float:center;">
-					<div class="col-xs-12" style="height:450px;background-color:#1ad2ff;">
+				<div class="col-xs-8" style="padding-top: 5px;border: 3px solid black;border-radius:5px;float:center;">
+					<div class="col-xs-12" style="">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<h4 style="text-align:center;"><b>By:</b> <?php echo $row['AUTHOR'];?></h4>
 						<h4 style ="text-align:center;">
