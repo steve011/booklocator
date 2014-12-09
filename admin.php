@@ -4,6 +4,7 @@ require ('../connect.php');
 include ('functions.php');
 session_start();
 $username=$_SESSION['username'];
+$_SESSION['username'] = $username;
 echo $username;
 //if(!isset($_SESSION['username']) || is_admin($username, $connection) == 0){
 //	header('Location: login.php?msg=2');
