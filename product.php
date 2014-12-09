@@ -51,7 +51,15 @@ session_start();
 					<div class="col-xs-12" style="height:450px;background-color:#1ad2ff;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<h4 style="text-align:center;"><b>By:</b> <?php echo $row['AUTHOR'];?></h4>
-						<h4 style ="text-align:center;"><b>Genre: </b><?php echo $row['GENRE'];?></h4>
+						<h4 style ="text-align:center;">
+						<?php 
+							$genre = $row['GENRE'];
+							if(preg_match('#[\d]#',$genre)){
+							}else{
+								echo '<b>Genre: </b>'.$genre;
+							}
+						?>
+						</h4>
 						<div style="text-align:left;width:100%;color:white;">
 							<p><b>Book Description:</b> </p>
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
