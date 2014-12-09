@@ -27,7 +27,7 @@ function display_book($row, $connection){
 	echo '</div></div></a>';
 }
 
-function display_header(){
+function display_menu(){
 	<header>
 		<div class="container" style="height:150px;">
 			<div class="row" style="">
