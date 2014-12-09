@@ -23,7 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $remember=$_POST['remember'];
      
      // 
-     $query = "SELECT count(*) from USERS WHERE user_id='".$username."' and password='".$password."'";
+     $query = "SELECT count(*) from USERS WHERE user_id LIKE '".$username."' and password='".$password."'";
      
      //Store resultsof select query
      $result = oci_parse($connection, $query);
