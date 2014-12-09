@@ -47,8 +47,8 @@ session_start();
 						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:100%;">';
 					?>
 				</div>
-				<div class="col-xs-8" style="height:490px;background-color:red;padding-top:20px;float:right;">
-					<div class="col-xs-12" style="height:450px;background-color:magenta;">
+				<div class="col-xs-8" style="height:490px;background-color:#ff471a;padding-top:20px;float:right;">
+					<div class="col-xs-12" style="height:450px;background-color:#1ad2ff;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<h4 style="text-align:center;">By: <?php echo $row['AUTHOR'];?></h4>
 						<h4 style ="text-align:center;">Genre: <?php echo $row['GENRE'];?></h4>
@@ -66,10 +66,10 @@ session_start();
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12" style="background-color:yellow;height:670px;margin-top:20px;">
+				<div class="col-xs-12" style="background-color:#ff471a;height:670px;margin-top:20px;">
 					
 					 
-					<div class="col-xs-12" style="height:600px;background-color:magenta;margin-top:10px;">
+					<div class="col-xs-12" style="height:600px;background-color:#1ad2ff;margin-top:10px;">
 					<?php  
 						$iframe_url = $row['REVIEW_IFRAME_URL'];
 						$iframe_url = str_replace("exp=2014-12-08", "exp=2015-12-08", $iframe_url);
