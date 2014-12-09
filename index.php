@@ -70,7 +70,7 @@ function get_average_rating($isbn, $conn){
 					 $array = array();
   					while($row = oci_fetch_array($stid))
   					{
-  						display_book($row);
+  						display_book($row, $connection);
   					/*
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row;
