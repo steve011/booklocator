@@ -49,7 +49,7 @@ session_start();
 				</div>
 				<div class="col-xs-8" style="height:440px;background-color:red;padding-top:20px;float:right;">
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
-						<h2 style="text-align:center;"><?php echo $row['title']; ?></h2>
+						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<div style="text-align:left;width:100%;color:white;">
 							<P>Book Description.</p>
 							<p>Altera utroque sea at, discere voluptatum vix in. Suas consequat contentiones vix te, homero recteque vituperatoribus et mel. Mel nulla solet accusam no, pro te antiopam torquatos. Ridens praesent te qui, cu his augue oblique, vel an quidam ocurreret assueverit. Sumo eripuit legendos vim et, tacimates reprehendunt eu qui.
