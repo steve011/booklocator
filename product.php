@@ -50,6 +50,7 @@ session_start();
 				<div class="col-xs-8" style="height:440px;background-color:red;padding-top:20px;float:right;">
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
+						<h1 style="text-align:center;">By: <?php echo $row['AUTHOR'];?></h1>
 						<div style="text-align:left;width:100%;color:white;">
 						<p>Book Description:</p>
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
@@ -58,7 +59,12 @@ session_start();
 							<p style = "text-align: left;">$ <?php echo $row['PRICE']?></p>
 							<button class="button add-to-cart">Add To Cart</button>
 							<br></br>	
-							<span>Book Rating: ***00</span>
+							<span>ISBN: </span>
+							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
+							<p style = "text-align: left;">Date published: <?php echo $row['YEAR_OF_PUBLICATION']?></p>
+							<p style= "text-align: left;"> Publisher: <?php echo $row['PUBLISHER']?> Binding <?php echo $row['PUBLISHER']?></p>
+							
+							
 						</div>
 					</div>
 				</div>
