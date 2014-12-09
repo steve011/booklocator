@@ -53,7 +53,7 @@ session_start();
           echo '<p><strong>Your username and/or password could not be matched to a valid user account</strong></p>';
      }
      ?>
-     <img style="height:350px;margin: 10px; width:30%; padding-top: 5px; left:20px; float:right;" src="http://i.imgur.com/Qx1LZF2.jpg">
+     <img style="height:350px;margin: 10px; width:30%; padding-top: 5px; left:50px;" src="http://i.imgur.com/Qx1LZF2.jpg">
      <div class="col-xs-4" style="height:350px; margin: 10px; background-color:#ff471a;padding-top: 5px;border: 3px solid black;border-radius:5px;float:center;">
 					<div class="col-xs-12" style="height:310px;background-color:#d8dfea;">
      <form name="form1" method="post" action="checklogin.php">
