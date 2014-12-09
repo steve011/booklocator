@@ -71,6 +71,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                setcookie('username', $_POST['username'], false, 'www.UNI.edu.au');
                setcookie('security', md5($_POST['password']), false, 'www.UNI.edu.au');
           }
+          if((isset($_GET['msg']) && $_GET['msg'] == 2)){
+               header('Location: admin.php');
+          }
           header('Location: index.php');
                
      } else {
