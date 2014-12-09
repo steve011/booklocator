@@ -4,9 +4,10 @@ require ('../connect.php');
 include ('function.php');
 session_start();
 $username=$_SESSION['username'];
-if(!isset($_SESSION['username']) || is_admin($username, $connection) == 0){
-	header('Location: login.php?msg=2');
-}
+echo $username;
+//if(!isset($_SESSION['username']) || is_admin($username, $connection) == 0){
+//	header('Location: login.php?msg=2');
+//}
 ?>
 
 <html><head><title>PHP Test</title></head>
