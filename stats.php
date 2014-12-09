@@ -64,7 +64,7 @@ session_start();
   		echo '<br></br>';
 	}
 ?>
-</div></div></div>
+</div>
 
 <div class="col-xs-4;"
 <?php
