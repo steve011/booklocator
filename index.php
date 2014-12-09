@@ -39,12 +39,14 @@ session_start();
 					<?php
 					 $stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM books ORDER BY DBMS_RANDOM.VALUE) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
+					 $value = 0;
   					while($row = oci_fetch_array($stid))
   					{
   					$isbn = $row["ISBN"];
   					$_SESSION['product'] = $row;
   					
-  					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
+  					
+  					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'" onclick="'.$_SESSION['product']=$row.' >';
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;;background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
