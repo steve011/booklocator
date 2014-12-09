@@ -90,9 +90,9 @@ session_start();
 
 					</div>
 					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-
-					</div>
 					-->
+					</div>
+					
 				</div>
 			</div>
 		</div>
