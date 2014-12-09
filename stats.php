@@ -23,19 +23,17 @@ $my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;';
 			print '<tr>';
 			echo "<p><b> Results found: "; 
 			oci_execute($stid);
-			$count = current(oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC));
 			echo "$count</b><p>";
 			print '</tr>';
 			
-			if($count){
+			
 				$ncols = oci_num_fields($stid);
 				print '<tr>';
 				for ($i = 1; $i <= $ncols; $i++) {
 					$column_name  = oci_field_name($stid, $i);
 					echo "<td><b>$column_name</b></td>";
-				}
+				
 				print '</tr>';
-			}
 	
 			while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
 				print '<tr>';
