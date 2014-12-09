@@ -51,7 +51,7 @@ session_start();
 		<br></br>
 <div class="container">
 <div class="row">
-<div class="col-xs-4;">
+<div class="col-xs-4">
 <h2>Users By Location</h2>
 <?php
 	$stid = oci_parse($connection, 'SELECT location, COUNT(*) FROM USERS GROUP BY location ORDER BY COUNT(*) DESC'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
@@ -66,13 +66,14 @@ session_start();
 ?>
 </div>
 
-<div class="col-xs-4;"
+<div class="col-xs-4">
+<h2>Users By Age</h2>
 <?php
 	$stid = oci_parse($connection, 'SELECT age, (COUNT(*) * 100.0) / (SELECT COUNT(*) from USERS) FROM USERS GROUP By age ORDER BY age DESC'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
   	{
-  		echo $row['COUNT(*)'];
+  		echo $row['(COUNT(*) * 100.0)'];
   		echo "   :   ";
   		echo $row['AGE'];
   		echo '<br></br>';
