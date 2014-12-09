@@ -18,7 +18,13 @@ session_start();
 				<div class="row" style="">
 					<div class="col-xs-8 col-xs-push-2" style="height:100%;background-color:#1ad2ff;z-index:2;border: 3px solid black;border-radius:10px;margin-top:-5px;">
 						<h1 style="font-family:cursive;font-weight:bold;text-align:center;font-style:italic;margin-top:25px;letter-spacing:2px;color:white">BOOK LOCATOR</h1>
-						<p style="position:relative;left:0px;bottom:-45px;"><?php echo $username; ?></p>
+						<?php 
+						if($username)
+						{
+						echo '<p style="position:relative;left:0px;bottom:-45px;">'. $username.'</p>';
+						echo '<a href="index.php"style="cursor:pointer;position:relative;left:30px;bottom:-45px;" onclick="'.$_SESSION['username']=NULL.'">Logout</a>';
+						}
+						?>
 					</div>
 				</div>
 				<Div class="row">
