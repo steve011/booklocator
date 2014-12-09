@@ -1,7 +1,9 @@
 #!/usr/local/bin/php
 <?php 
 require ('../connect.php');
+include ('functions.php';)
 session_start();
+/*
 function get_average_rating($isbn, $conn){
 	$avg_stid = oci_parse($conn, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
 	$num_stid = oci_parse($conn, "Select count(*) from ratings where isbn ='".$isbn."'");
@@ -13,6 +15,7 @@ function get_average_rating($isbn, $conn){
   		return -1;
   	}
 }
+*/
 ?>
 
 <html>
