@@ -88,14 +88,14 @@ if ($searching == "Books")
 		else{
 			if($filter == "Lower_to_Higher")
 			{
-			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY PRICE ASC";
-			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
+			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%'";
+			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query) ORDER BY PRICE ASC");
 			$query .= " AND ROWNUM <= 1000";
 			}
 			else
 			{
-			$query == "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY DESC";
-			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
+			$query == "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%'";
+			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)' ORDER BY DESC");
 			$query .= " AND ROWNUM <= 1000";
 			}
 		}
