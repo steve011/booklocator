@@ -3,19 +3,6 @@
 require ('../connect.php');
 include ('functions.php'); // contains get_average_rating($isbn, $conn);
 session_start();
-/*
-function get_average_rating($isbn, $conn){
-	$avg_stid = oci_parse($conn, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
-	$num_stid = oci_parse($conn, "Select count(*) from ratings where isbn ='".$isbn."'");
-  	if(oci_execute($avg_stid) && oci_execute($num_stid)){
-  		$result['AVERAGE_RATING'] = round(current(oci_fetch_array($avg_stid)), 2);
-  		$result['NUMBER_OF_RATINGS'] = current(oci_fetch_array($num_stid));
-  		return $result;
-  	}else{
-  		return -1;
-  	}
-}
-*/
 ?>
 
 <html>
@@ -70,7 +57,7 @@ function get_average_rating($isbn, $conn){
 					 $array = array();
   					while($row = oci_fetch_array($stid))
   					{
-  						display_book($row, $connection);
+  					display_book($row, $connection);
   					/*
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row;
@@ -100,7 +87,8 @@ function get_average_rating($isbn, $conn){
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
-  					
+  					display_book($row, $connection);
+  					/*
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row;
   					$rating = get_average_rating($row["ISBN"], $connection);
@@ -115,6 +103,7 @@ function get_average_rating($isbn, $conn){
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div>';
 					}
+					*/
 					 ?>
 			</div>	
 		</div>
@@ -126,7 +115,8 @@ function get_average_rating($isbn, $conn){
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
-  						
+  					display_book($row, $connection);
+  					/*
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row;
   					$rating = get_average_rating($row["ISBN"], $connection);
@@ -141,6 +131,7 @@ function get_average_rating($isbn, $conn){
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div>';
 					}
+					*/
 					 ?>
 			</div>	
 		</div>
