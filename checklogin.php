@@ -23,10 +23,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $remember=$_POST['remember'];
      
      // 
-     $query = "SELECT * from USERS WHERE username='".$username."' and password='".$password."'";
+     $query = "SELECT count(*) from USERS WHERE username='".$username."' and password='".$password."'";
      
      //Store resultsof select query
-     $result = OCIParse($connection, $query);
+     $result = oci_parse($connection, $query);
      
      //Just check 
      //$sql = OCIParse($connect, $query);
@@ -35,7 +35,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
           exit;
      }
      
-     $r = OCIExecute($result);
+     $r = oci_execute($result);
      
      if(! $r) {
           echo "An error occurred in executing the sql '$query'.\n";
@@ -50,7 +50,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      if ($tmpcount==1){
      */
      
-     $count = OCIRowCount($result);
+     //$count = OCIRowCount($result);
+     
+     $count = current(oci_fetch_array($result, OCI_RETURN_NULLS+OCI_ASSOC));
      
      if ($count == 1) {
           // the row returned must have username and password equal to those supplied 
