@@ -59,10 +59,10 @@ session_start();
 							<p style = "text-align: left;">$ <?php echo $row['PRICE']?></p>
 							<button class="button add-to-cart">Add To Cart</button>
 							<br></br>
-							<span>ISBN: </span>
+							<span><b>ISBN:</b> </span>
 							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
 							<p style = "text-align: left;"><b>Date published:</b> <?php echo $row['YEAR_OF_PUBLICATION']?></p>
-							<p style= "text-align: left;"><b> Publisher:</b> <?php echo $row['PUBLISHER']?>| <b>Binding: </b><?php echo $row['BINDING']?>|<b> Pages: </b><?php echo $row['PAGES']?>| <b>Language</b>php echo $row['LANGUAGE']?></p>
+							<p style= "text-align: left;"><b> Publisher:</b> <?php echo $row['PUBLISHER']?>| <b>Binding: </b><?php echo $row['BINDING']?>|<b> Pages: </b><?php echo $row['PAGES']?>| <b>Language</b><?php echo $row['LANGUAGE']?></p>
 						</div>
 					</div>
 				</div>
