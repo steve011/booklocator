@@ -21,11 +21,11 @@ session_start();
  						$username=$_SESSION['username'];
 						if($_SESSION['username'])
 						{
-						echo '<p style="position:relative;left:0px;bottom:-45px;">' 
+						echo '<p style="position:relative;left:0px;bottom:-45px;">';
 						echo $_SESSION['username'];
 						echo '</p>';
 						echo '<a href="index.php" style="cursor:pointer;position:relative;left:100%;bottom:-15px;" onclick="';
-						$_SESSION['username']=NULL
+						$_SESSION['username']=NULL;
 						echo '">Logout</a>';
 						}
 						?>
