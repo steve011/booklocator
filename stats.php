@@ -66,8 +66,6 @@ session_start();
 ?>
 </div></div></div>
 
-<div class="container">
-<div class="row">
 <div class="col-xs-4;"
 <?php
 	$stid = oci_parse($connection, 'SELECT age, (COUNT(*) * 100.0) / (SELECT COUNT(*) from USERS) FROM USERS GROUP By age ORDER BY age DESC'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
@@ -80,7 +78,10 @@ session_start();
   		echo '<br></br>';
 	}
 ?>
-</div></div></div>
+</div>
+
+
+</div></div>
 <?php
 oci_close($connection);
 ?>
