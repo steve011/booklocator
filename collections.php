@@ -47,12 +47,12 @@
             <Option VALUE="Year_Of_Publication">Year Published</option>
         </Select>
         </td>
-        <td><input type="radio" name="Price_Filter" value="Lower_to_High">Low to High</td>
-        <br></br>
-        <td><input type="radio" name="Price_Filter" value="Higher_to_Low">High to Low</td>
         <td><input type="text" name="find" width="180" style="width: 180px"/></td>
         <input type="hidden" name="searching" value="Books" />
         <td><input type="submit"  /></td>
+        <td><input type="radio" name="Price_Filter" value="Lower_to_High">Low to High</td>
+        <br></br>
+        <td><input type="radio" name="Price_Filter" value="Higher_to_Low">High to Low</td>
     </form>
     </tr>
 </table>
@@ -64,6 +64,7 @@
 
 <?php 
 $my_query = $_POST["my_query"];
+$filter= $_POST["Price_Filter"];
 $find = $_POST["find"];
 $field = $_POST["field"];
 $searching = $_POST["searching"]; 
@@ -85,9 +86,18 @@ if ($searching == "Books")
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 		}
 		else{
-			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%'";
+			if($filter = "Lower_to_Higher")
+			{
+			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY PRICE ASC";
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 			$query .= " AND ROWNUM <= 1000";
+			}
+			else
+			{
+			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY DESC";
+			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
+			$query .= " AND ROWNUM <= 1000";
+			}
 		}
 		$stid = oci_parse($connection, "$query");
 	
