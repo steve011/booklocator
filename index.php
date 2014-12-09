@@ -2,7 +2,7 @@
 <?php 
 require ('../connect.php');
 session_start();
- $username=$_SESSION['username'] ;
+ $username=$_SESSION['username'];
 ?>
 
 <html>
