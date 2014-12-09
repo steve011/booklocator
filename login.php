@@ -50,6 +50,7 @@
                <input type="password" name="password" id="password">
           </label>
           <label>
+          <br></br>
                Remember Me:
                <input type="checkbox" name="rememberme" value="1"><br>
           </label>
