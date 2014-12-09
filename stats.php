@@ -73,7 +73,7 @@ session_start();
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
   	{
-  		echo $row['((COUNT(*) * 100.0) / (SELECT COUNT(*) from USERS))'];
+  		echo $row['COUNT(*)'];
   		echo "   :   ";
   		echo $row['AGE'];
   		echo '<br></br>';
