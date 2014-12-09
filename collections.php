@@ -20,10 +20,10 @@
  						$username=$_SESSION['username'];
 						if($_SESSION['username'])
 						{
-						echo '<p style="position:relative;left:0px;bottom:-45px;">';
+						echo '<p style="position:relative;left:0px;bottom:-25px;">';
 						echo $_SESSION['username'];
 						echo '</p>';
-						echo '<a href="index.php" style="cursor:pointer;position:relative;left:95%;bottom:-15px;" onclick="';
+						echo '<a href="index.php" style="cursor:pointer;position:relative;left:95%;bottom:5px;" onclick="';
 						unset($_SESSION['username']);
 						echo '">Logout</a>';
 						}
