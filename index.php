@@ -105,9 +105,7 @@ session_start();
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
-					if(isset($row["PRICE"]) {
-						echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
-					}
+					echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div>';
 					}
 					 ?>
