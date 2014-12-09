@@ -23,7 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      $remember=$_POST['remember'];
      
      // 
-     $query = "SELECT count(*) from USERS WHERE user_id LIKE '".$username."' and password='".$password."'";
+     $query = "SELECT count(*) from USERS WHERE username='".$username."' and password='".$password."'";
      
      //Store resultsof select query
      $result = oci_parse($connection, $query);
@@ -52,9 +52,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      
      //$count = OCIRowCount($result);
      
-     //$count = current(oci_fetch_array($result, OCI_RETURN_NULLS+OCI_ASSOC));
+     $count = current(oci_fetch_array($result, OCI_RETURN_NULLS+OCI_ASSOC));
      
-     $count = 1;
+    //$count = 1;
      
      if ($count == 1) {
           // the row returned must have username and password equal to those supplied 
