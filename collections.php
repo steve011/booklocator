@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?php 
 require ('../connect.php');
-include('functions.php';)
+include('functions.php');
 session_start();
 $username=$_SESSION['username'];
 $_SESSION['username'] = $username;
