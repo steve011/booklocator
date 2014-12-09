@@ -77,7 +77,7 @@ session_start();
 				</div>
 				<div class="col-xs-12" style="margin-top:20px">
 					<?php
-					$stid = oci_parse($connection, 'SELECT * FROM BOOKS WHERE title LIKE '%$row['TITLE']%''); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+					$stid = oci_parse($connection, 'SELECT * FROM BOOKS WHERE genre = $row['GENRE']'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 					 oci_execute($stid);
   					while($row = oci_fetch_array($stid))
   					{
