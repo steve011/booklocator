@@ -40,6 +40,7 @@
      <form name="form1" method="post" action="checklogin.php">
      <p>
           <label>
+          <br></br>
                User Name
                <input type="text" name="username" id="user">
           </label>
@@ -52,7 +53,7 @@
           <label>
           
                Remember Me:
-               <br></br>
+               
                <input type="checkbox" name="rememberme" value="1"><br>
           </label>
           <label>
