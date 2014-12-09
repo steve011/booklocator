@@ -17,6 +17,7 @@ session_start();
 				<div class="row" style="">
 					<div class="col-xs-8 col-xs-push-2" style="height:100%;background-color:#1ad2ff;z-index:2;border: 3px solid black;border-radius:10px;margin-top:-5px;">
 						<h1 style="font-family:cursive;font-weight:bold;text-align:center;font-style:italic;margin-top:25px;letter-spacing:2px;color:white">BOOK LOCATOR</h1>
+						<a style="top:0px;left:0px;position:relative;" href="stats.php">Statistics</a>
 						<?php 
  						$username=$_SESSION['username'];
 						if($_SESSION['username'])
