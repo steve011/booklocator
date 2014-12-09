@@ -70,6 +70,8 @@ function get_average_rating($isbn, $conn){
 					 $array = array();
   					while($row = oci_fetch_array($stid))
   					{
+  						display_book($row);
+  					/*
   					$isbn = $row["ISBN"];
   					$_SESSION["$isbn"] = $row;
   					$rating = get_average_rating($row["ISBN"], $connection);
@@ -85,6 +87,7 @@ function get_average_rating($isbn, $conn){
 					if($rating['AVERAGE_RATING'] > 0) echo '<p style="font-size:12px;text-align:center;"> Average Rating: '.htmlentities($rating['AVERAGE_RATING']).'</p>';
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div></a>';
+					*/
 					}
 					 ?>
 			</div>	
