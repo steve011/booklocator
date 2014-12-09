@@ -6,9 +6,9 @@ session_start();
 $username=$_SESSION['username'];
 echo $username;
 echo is_admin($username, $connection);
-//if(!isset($_SESSION['username']) || !is_admin($username, $connection)){
-	//header('Location: login.php?msg=2');
-//}
+if(!isset($_SESSION['username']) || !is_admin($username, $connection)){
+	header('Location: login.php?msg=2');
+}
 ?>
 
 <html><head><title>PHP Test</title></head>
