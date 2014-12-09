@@ -73,7 +73,7 @@ session_start();
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
   	{
-  		if($row['AGE'] != ""){
+  		if($row['AGE'] != "" && $row['AGE'] < 110){
   		echo $row['COUNT(*)'];
   		echo "   :   ";
   		echo $row['AGE'];
