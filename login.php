@@ -54,7 +54,7 @@
           
                Remember Me:
                
-               <input type="checkbox" name="rememberme" value="1"><br></br>
+               <input type="checkbox" name="rememberme" value="1"<br></br>><br>
           </label>
           <label>
           <br></br>
