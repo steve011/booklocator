@@ -66,12 +66,16 @@ session_start();
                Password
                <input type="password" name="password" id="password">
           </label>
+          </p>
+          <p>
           <label>
-          
+       
                Remember Me:
                
                <input type="checkbox" name="rememberme" value="1">
           </label>
+          </p>
+          <p>
           <label>
           
           <input type="submit" name="submit" id="button" value="Login">
