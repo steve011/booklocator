@@ -51,7 +51,7 @@ session_start();
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<div style="text-align:left;width:100%;color:white;">
-							<P>Book Description.</p>
+							<p><?php echo $row['DESCRIPTION']?></p>
 							<p>Altera utroque sea at, discere voluptatum vix in. Suas consequat contentiones vix te, homero recteque vituperatoribus et mel. Mel nulla solet accusam no, pro te antiopam torquatos. Ridens praesent te qui, cu his augue oblique, vel an quidam ocurreret assueverit. Sumo eripuit legendos vim et, tacimates reprehendunt eu qui.
 
 Mei soleat democritum mediocritatem an, saperet ornatus et nec, nulla eirmod scribentur ea mea. Eam in elaboraret comprehensam, et usu facete reprimique. Illud atqui impedit at pro, quo ex soleat intellegam, ea munere explicari consetetur mei. Mei no eirmod legendos praesent. No sit euismod complectitur, movet graeco iudicabit in eos.
