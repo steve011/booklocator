@@ -47,6 +47,9 @@
             <Option VALUE="Year_Of_Publication">Year Published</option>
         </Select>
         </td>
+        <td><input type="radio" name="Price_Filter" value="Lower_to_High">Low to High</td>
+        <br></br>
+        <td><input type="radio" name="Price_Filter" value="Higher_to_Low">High to Low</td>
         <td><input type="text" name="find" width="180" style="width: 180px"/></td>
         <input type="hidden" name="searching" value="Books" />
         <td><input type="submit"  /></td>
