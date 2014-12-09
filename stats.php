@@ -17,7 +17,6 @@ session_start();
 	$array = array();
   	while($row = oci_fetch_array($stid))
   	{
-  		echo $row;
 	}
 ?>
 <?php
