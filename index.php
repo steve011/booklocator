@@ -4,8 +4,11 @@ require ('../connect.php');
 session_start();
 function get_average_rating($isbn){
 	$stid = oci_parse($connection, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
-  	oci_execute($stid);
-  	return current(oci_fetch_array($stid));
+  	if(oci_execute($stid)){
+  		return current(oci_fetch_array($stid));
+  	}else{
+  		return -1;
+  	}
 }
 ?>
 
