@@ -8,7 +8,7 @@ echo $username;
 //echo is_admin($username, $connection);
 //echo isset($_SESSION['username']);
 if(!is_admin($username, $connection)){
-	//header('Location: login.php?msg=2');
+	header('Location: login.php?msg=2');
 }
 ?>
 
