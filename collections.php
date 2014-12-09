@@ -14,8 +14,20 @@
 			<div class="container" style="height:150px;">
 				<div class="row" style="">
 					<div class="col-xs-8 col-xs-push-2" style="height:100%;background-color:#1ad2ff;z-index:2;border: 3px solid black;border-radius:10px;margin-top:-5px;">
-						<img style="float:left;" src="book-logo.jpg" style="margin-top:10%;width:100%:height:auto;">
 						<h1 style="font-family:cursive;font-weight:bold;text-align:center;font-style:italic;margin-top:25px;letter-spacing:2px;color:white">BOOK LOCATOR</h1>
+						<a style="top:-60px;left:0px;position:relative;color:white;" href="stats.php">Statistics</a>
+						<?php 
+ 						$username=$_SESSION['username'];
+						if($_SESSION['username'])
+						{
+						echo '<p style="position:relative;left:0px;bottom:-45px;">';
+						echo $_SESSION['username'];
+						echo '</p>';
+						echo '<a href="index.php" style="cursor:pointer;position:relative;left:95%;bottom:-15px;" onclick="';
+						unset($_SESSION['username']);
+						echo '">Logout</a>';
+						}
+						?>
 					</div>
 				</div>
 				<Div class="row">
@@ -23,8 +35,9 @@
 							<ul>
 								<li><a href="index.php">Home</a></li>
 								<li><a href="collections.php">Store<a></li>
-								<li><a href="admin.php">Search</a></li>
-								<li><a href="#">Support</a></li>
+								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/admin.php">Search</a></li>
+								<li><a href="http://cise.ufl.edu/~sw5/Book_Locator/adminer.php?oracle=oracle.cise.ufl.edu%2Forcl&username=sw5&db=CISETS&ns=SW5">Support</a></li>
+								<li><a href="login.php">Login</a></li>
 							</ul>
 					</div>
 				</div>
