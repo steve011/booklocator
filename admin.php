@@ -1,9 +1,10 @@
 #!/usr/local/bin/php
-<?php require ('../connect.php'); 
+<?php 
+require ('../connect.php');
+include ('function.php');
 session_start();
 $username=$_SESSION['username'];
-$_SESSION['username'] = $username;
-if(is_admin($username, $connection) == 0){
+if(!isset($_SESSION['username']) || is_admin($username, $connection) == 0){
 	header('Location: login.php?msg=2');
 }
 ?>
