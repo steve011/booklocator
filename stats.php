@@ -15,7 +15,7 @@ session_start();
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
   	{
-  		echo $row;
+  		echo $row['COUNT(*)'];
 	}
 ?>
 <?php
