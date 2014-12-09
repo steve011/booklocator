@@ -12,13 +12,7 @@ session_start();
 
 <?php 
 $my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;SELECT location,  COUNT(*) FROM USERS GROUP BY location;'
-$find = $_POST["find"];
-$field = $_POST["field"];
-$searching = "SELECT location,  COUNT(*) FROM USERS GROUP BY location"; 
-
-		$find = strtoupper($find); 
-		$find = strip_tags($find); 
-		$find = trim ($find); 
+$searching = "SELECT location,  COUNT(*) FROM USERS GROUP BY location"; f
 	
 		$stid_count = 0;
 	
