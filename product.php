@@ -39,7 +39,7 @@ session_start();
 			</div>
 		</header>
 		<div class="container" >
-			<div class="row" style="">
+			<div class="row" style="padding-top:45px;">
 					<?php
 
 						$row = $_SESSION[$_GET['Product']];
