@@ -40,12 +40,12 @@ session_start();
 		</header>
 		<div class="container">
 			<div class="row" style="">
-			<?php
+					<?php
 
-			$row = $_SESSION[$_GET['Product']];
-				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;float:left;">';
-					echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="padding-top:25px;width:100%;">';
-			?>
+						$row = $_SESSION[$_GET['Product']];
+						echo '<div class="col-xs-4" style="height:440px;padding-top:20px;float:left;">';
+						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="width:100%;">';
+					?>
 				</div>
 				<div class="col-xs-8" style="height:490px;background-color:red;padding-top:20px;float:right;">
 					<div class="col-xs-12" style="height:450px;background-color:magenta;">
@@ -53,20 +53,16 @@ session_start();
 						<h4 style="text-align:center;">By: <?php echo $row['AUTHOR'];?></h4>
 						<h4 style ="text-align:center;">Genre: <?php echo $row['GENRE'];?></h4>
 						<div style="text-align:left;width:100%;color:white;">
-						<p>Book Description: </p>
+							<p>Book Description: </p>
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
-							
 							<p>Book Price</p>
 							<p style = "text-align: left;">$ <?php echo $row['PRICE']?></p>
 							<button class="button add-to-cart">Add To Cart</button>
-							<br></br>	
+							<br></br>
 							<span>ISBN: </span>
 							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
 							<p style = "text-align: left;">Date published: <?php echo $row['YEAR_OF_PUBLICATION']?></p>
 							<p style= "text-align: left;"> Publisher: <?php echo $row['PUBLISHER']?>| Binding: <?php echo $row['BINDING']?>| Pages: <?php echo $row['PAGES']?>| Language: <?php echo $row['LANGUAGE']?></p>
-							 
-							
-							
 						</div>
 					</div>
 				</div>
