@@ -24,8 +24,8 @@ session_start();
 						echo '<p style="position:relative;left:0px;bottom:-45px;">';
 						echo $_SESSION['username'];
 						echo '</p>';
-						echo '<a href="index.php" style="cursor:pointer;position:relative;left:100%;bottom:-15px;" onclick="';
-						$_SESSION['username']=NULL;
+						echo '<a href="index.php" style="cursor:pointer;position:relative;left:95%;bottom:-15px;" onclick="';
+						unset($_SESSION['username']);
 						echo '">Logout</a>';
 						}
 						?>
