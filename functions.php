@@ -26,7 +26,7 @@ function display_book($row, $connection){
 	if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 	echo '</div></div></a>';
 }
-
+/*
 function display_menu(){
 	<header>
 		<div class="container" style="height:150px;">
@@ -62,5 +62,5 @@ function display_menu(){
 		</div>
 	</header>
 }
-
+*/
 ?>
