@@ -78,7 +78,7 @@ session_start();
 				<div class="col-xs-12" style="background-color:#ff471a;margin-top:20px;">
 					<h3>External Reviews: </h3>
 					 
-					<div class="col-xs-12" style="height:600px;background-color:#1ad2ff;margin-top:10px;">
+					<div class="col-xs-12" style=";background-color:#1ad2ff;margin-top:10px;">
 					
 					<?php  
 						$iframe_url = $row['REVIEW_IFRAME_URL'];
@@ -87,21 +87,7 @@ session_start();
 					?>
 					<!--
 					</div>
-					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-
-					</div>
-					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-
-					</div>
-					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-
-					</div>
-					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-
-					</div>
-					<div class="col-xs-12" style="height:100px;background-color:magenta;margin-top:10px;">
-					-->
-					</div>
+				
 					
 				</div>
 			</div>
