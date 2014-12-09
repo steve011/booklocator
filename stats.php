@@ -51,6 +51,23 @@ session_start();
 		<br></br>
 <div class="container">
 <div class="row">
+<div class="col-cd-12">
+<?php
+	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM USERS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+	oci_execute($stid);
+  	$row = oci_fetch_array($stid)
+  	echo "Total Users: ".$row['COUNT(*)'];
+  	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM BOOKS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+	oci_execute($stid);
+  	$row = oci_fetch_array($stid)
+  	echo "Total Users: ".$row['COUNT(*)'];
+  	$stid = oci_parse($connection, 'SELECT COUNT(*) FROM RATINGS'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+	oci_execute($stid);
+  	$row = oci_fetch_array($stid)
+  	echo "Total Users: ".$row['COUNT(*)'];
+  	
+?>
+</div>
 <div class="col-xs-4">
 <h2>Users By Location</h2>
 <?php
