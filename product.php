@@ -82,6 +82,7 @@ session_start();
   					while($row = oci_fetch_array($stid))
   					{
   					display_book($row, $connection);
+  					}
 					?>
 				</div>
 				<div class="col-xs-12" style="background-color:#ff471a;margin-top:20px;">
