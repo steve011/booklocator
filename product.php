@@ -55,14 +55,14 @@ session_start();
 						<div style="text-align:left;width:100%;color:white;">
 							<p><b>Book Description:</b> </p>
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
-							<p>Book Price</p>
+							<p><b>Book Price:</b></p>
 							<p style = "text-align: left;">$ <?php echo $row['PRICE']?></p>
 							<button class="button add-to-cart">Add To Cart</button>
 							<br></br>
 							<span>ISBN: </span>
 							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
-							<p style = "text-align: left;">Date published: <?php echo $row['YEAR_OF_PUBLICATION']?></p>
-							<p style= "text-align: left;"> Publisher: <?php echo $row['PUBLISHER']?>| Binding: <?php echo $row['BINDING']?>| Pages: <?php echo $row['PAGES']?>| Language: <?php echo $row['LANGUAGE']?></p>
+							<p style = "text-align: left;"><b>Date published:</b> <?php echo $row['YEAR_OF_PUBLICATION']?></p>
+							<p style= "text-align: left;"><b> Publisher:</b> <?php echo $row['PUBLISHER']?>| <b>Binding: </b><?php echo $row['BINDING']?>|<b> Pages: </b><?php echo $row['PAGES']?>| <b>Language</b>php echo $row['LANGUAGE']?></p>
 						</div>
 					</div>
 				</div>
