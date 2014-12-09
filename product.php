@@ -63,7 +63,8 @@ session_start();
 							<span>ISBN: </span>
 							<p style = "text-align: left;"><?php echo $row['ISBN']?></p>
 							<p style = "text-align: left;">Date published: <?php echo $row['YEAR_OF_PUBLICATION']?></p>
-							<p style= "text-align: left;"> Publisher: <?php echo $row['PUBLISHER']?>	 Binding: <?php echo $row['BINDING']?>, 	Pages:<?php echo $row['PAGES']?></p>
+							<p style= "text-align: left;"> Publisher: <?php echo $row['PUBLISHER']?>| Binding: <?php echo $row['BINDING']?>|Pages:<?php echo $row['PAGES']?></p>
+							<p style = "text-align: left";> Language: <?php echo $row['LANGUAGE']?></p>
 							
 							
 						</div>
