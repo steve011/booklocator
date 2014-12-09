@@ -62,10 +62,9 @@ function get_average_rating($isbn){
   					while($row = oci_fetch_array($stid))
   					{
   					$isbn = $row["ISBN"];
-  					
-  					$avg_rating = get_average_rating($isbn);
-  					
   					$_SESSION["$isbn"] = $row; 
+  					
+  					$avg_rating = get_average_rating($row["ISBN"]);
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
