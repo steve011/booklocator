@@ -15,9 +15,10 @@ function is_admin($user, $conn){
 	echo $user;
 	$stid = oci_parse($conn, "Select admin from users where username='".$user."'");
   	if(oci_execute($stid)){
-  		if(oci_fetch_array($stid)){
-  			$admin = current(oci_fetch_array($stid));
-			if($admin == 'T'){
+  		$ad = oci_fetch_array($stid)
+  		if(is_array($ad)){
+  			$ad = current(oci_fetch_array($stid));
+			if($ad == 'T'){
 				return true;
 			}
   		}
