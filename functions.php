@@ -11,7 +11,7 @@ function get_average_rating($isbn, $conn){
   	}
 }
 
-is_admin($user, $conn){
+function is_admin($user, $conn){
 	$stid = oci_parse($conn, "Select admin from users where username='".$user."'");
   	if(oci_execute($stid)){
   		$admin = current(oci_fetch_array($num_stid));
