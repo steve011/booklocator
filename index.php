@@ -26,9 +26,10 @@ session_start();
 						echo '<p style="position:relative;left:0px;bottom:-25px;">';
 						echo $_SESSION['username'];
 						echo '</p>';
-						echo '<a href="index.php" style="cursor:pointer;position:relative;left:95%;bottom:5px;" onclick="';
-						//unset($_SESSION['username']);
-						echo '">Logout</a>';
+						echo '<a href="index.php?lgout=true" style="cursor:pointer;position:relative;left:95%;bottom:5px;>Logout</a>';
+						if(isset($_GET['lgout'])){
+							unset($_SESSION['username']);	
+						}
 						}
 						?>
 					</div>
