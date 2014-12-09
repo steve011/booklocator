@@ -55,6 +55,7 @@ session_start();
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
 							
 							<p>Book Price</p>
+							<p style = "text-align: left;">$ <?php echo $row['PRICE']?></p>
 							<button class="button add-to-cart">Add To Cart</button>
 							<br></br>	
 							<span>Book Rating: ***00</span>
