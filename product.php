@@ -51,7 +51,8 @@ session_start();
 					<div class="col-xs-12" style="height:400px;background-color:magenta;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<div style="text-align:left;width:100%;color:white;">
-							<h4 style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></h4>
+						<p>Book Description:</p>
+							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
 							
 							<p>Book Price</p>
 							<button class="button add-to-cart">Add To Cart</button>
