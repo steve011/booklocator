@@ -43,7 +43,7 @@ session_start();
 					<?php
 
 						$row = $_SESSION[$_GET['Product']];
-						echo '<div class="col-xs-4" style="height:75%;padding-top:45px;float:left;">';
+						echo '<div class="col-xs-4" style="height:70%;padding-top:45px;float:left;">';
 						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="width:100%;">';
 					?>
 				</div>
