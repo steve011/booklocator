@@ -43,11 +43,11 @@ session_start();
 					<?php
 
 						$row = $_SESSION[$_GET['Product']];
-						echo '<div class="col-xs-4" style="height:500px;padding-top:45px;padding-bottom:15px;float:center;">';
+						echo '<div class="col-xs-4" style="height:500px;padding-top:45px;padding-bottom:15px;float:right;">';
 						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="height:100%;">';
 					?>
 				</div>
-				<div class="col-xs-8" style="height:490px;background-color:#ff471a;padding-top:20px;float:left;">
+				<div class="col-xs-8" style="height:490px;background-color:#ff471a;padding-top:20px;float:center;">
 					<div class="col-xs-12" style="height:450px;background-color:#1ad2ff;">
 						<h2 style="text-align:center;"><?php echo $row['TITLE']; ?></h2>
 						<h4 style="text-align:center;">By: <?php echo $row['AUTHOR'];?></h4>
