@@ -4,6 +4,7 @@ require ('../connect.php');
 session_start();
 function get_average_rating($isbn){
 	echo "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'";
+	echo $connection;
 	
 	$stid = oci_parse($connection, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
   	if(oci_execute($stid)){
