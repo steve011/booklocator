@@ -36,7 +36,9 @@ session_start();
 		<div class="container">
 			<div class="row" style="">
 			<?php
+			echo '<p><p>';
 			//echo '<h1>', $_GET['Product'], '</h1>';
+			echo '<h1>', $_GET['Product'], '</h1>';
 			
 			$row = $_SESSION['Product'];
 				echo '<div class="col-xs-4" style="height:440px;padding-top:20px;float:left;">';
