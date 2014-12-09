@@ -17,7 +17,7 @@ function is_admin($user, $conn){
   	if(oci_execute($stid)){
   		$ad = oci_fetch_array($stid);
   		if(is_array($ad)){
-  			$ad = current(oci_fetch_array($stid));
+  			$ad = current($ad);
 			if($ad == 'T'){
 				return true;
 			}
