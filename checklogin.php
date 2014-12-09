@@ -54,7 +54,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
      
      $count = current(oci_fetch_array($result, OCI_RETURN_NULLS+OCI_ASSOC));
      
-     echo $count;
+     //echo $count;
      
      if ($count == 1) {
           // the row returned must have username and password equal to those supplied 
@@ -75,7 +75,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                
      } else {
           //echo 'Username/Password Invalid';
-          //header('Location: login.php?msg=1');
+          header('Location: login.php?msg=1');
      }
           
 } else {
