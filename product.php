@@ -38,12 +38,12 @@ session_start();
 				</div>
 			</div>
 		</header>
-		<div class="container">
+		<div class="container" "style="margin-left:auto;margin-right:auto;">
 			<div class="row" style="">
 					<?php
 
 						$row = $_SESSION[$_GET['Product']];
-						echo '<div class="col-xs-4" style="height:640px;padding-top:45px;float:left;">';
+						echo '<div class="col-xs-4" style="height:100%;padding-top:45px;float:left;">';
 						echo '<img src="' .htmlentities($row["IMAGE_URL_L"]). '"style="width:100%;">';
 					?>
 				</div>
