@@ -1,5 +1,8 @@
 #!/usr/local/bin/php
-<?php require ('../connect.php'); ?>
+<?php require ('../connect.php'); 
+
+session_start();
+?>
 
 <html>
 	<head>
