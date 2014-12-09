@@ -86,7 +86,7 @@ if ($searching == "Books")
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 		}
 		else{
-			if($filter = "Lower_to_Higher")
+			if($filter == "Lower_to_Higher")
 			{
 			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY PRICE ASC";
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
@@ -94,7 +94,7 @@ if ($searching == "Books")
 			}
 			else
 			{
-			$query = "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY DESC";
+			$query == "SELECT * FROM $searching WHERE UPPER($field) LIKE '%$find%' ORDER BY DESC";
 			$stid_count = oci_parse($connection, "SELECT COUNT(*) FROM ($query)");
 			$query .= " AND ROWNUM <= 1000";
 			}
