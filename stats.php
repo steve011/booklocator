@@ -15,15 +15,14 @@ $my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;';
 
 		$stid_count = 0;
 		$query = $my_query;
-		$stid_count = oci_parse($connection, $query);
 		$query .= " AND ROWNUM <= 1000";
 	
 		print '<table border="1">';
 	
-		$stid = oci_parse($connection, "$query");
+			$stid = oci_parse($connection, "$query");
 			print '<tr>';
 			echo "<p><b> Results found: "; 
-			oci_execute($stid_count);
+			oci_execute($stid);
 			$count = current(oci_fetch_array($stid_count, OCI_RETURN_NULLS+OCI_ASSOC));
 			echo "$count</b><p>";
 			print '</tr>';
