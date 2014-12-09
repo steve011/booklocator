@@ -60,7 +60,7 @@ session_start();
 							}
 						?>
 						</h4>
-						<div style="text-align:left;width:100%;color:white;">
+						<div style="text-align:left;width:100%;">
 							<p><b>Book Description:</b> </p>
 							<p style = "text-align:left;"> <?php echo $row['DESCRIPTION']?></p>
 							<p><b>Book Price:</b></p>
