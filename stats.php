@@ -11,19 +11,12 @@ session_start();
 <h2>Search</h2>
 
 <?php 
-$my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;SELECT location,  COUNT(*) FROM USERS GROUP BY location;'
-$searching = "SELECT location,  COUNT(*) FROM USERS GROUP BY location";
+$my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;SELECT location,  COUNT(*) FROM USERS GROUP BY location';
+
 		$stid_count = 0;
-	
-		if($searching == "Query"){
-			$query = "$my_query";
-			$stid_count = oci_parse($connection, $query);
-		}
-		else{
 		 $query = $my_query;
-			$stid_count = oci_parse($connection, $query);
-			$query .= " AND ROWNUM <= 1000";
-		}
+		$stid_count = oci_parse($connection, $query);
+		$query .= " AND ROWNUM <= 1000";
 	
 		echo "<h2>Results</h2><p>"; 
 		
