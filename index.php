@@ -58,7 +58,7 @@ session_start();
   					{
   			
   					$isbn = $row["ISBN"];
-  					$_SESSION[$isbn] = $row; 
+  					$_SESSION["$isbn"] = $row; 
   					
   					echo '<a href="product.php?Product='.htmlentities($row["ISBN"]).'">';
   					//onclick="'.$_SESSION['product']=$row.'"
