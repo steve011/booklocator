@@ -52,6 +52,9 @@ session_start();
      if (isset($_GET['msg']) && $_GET['msg'] == 1) {
           echo '<p><strong>Your username and/or password could not be matched to a valid user account</strong></p>';
      }
+     if (isset($_GET['msg']) && $_GET['msg'] == 1) {
+	echo '<p><strong>Must be logged in as an administrator to access admin page.</strong></p>';
+	}
      ?>
       <img style="height:350px;margin: 10px; width:60%; padding-top: 5px; left:50px; float:right;" src="http://i.imgur.com/Qx1LZF2.jpg">
      <div class="col-xs-4" style="height:350px; margin: 10px; background-color:#ff471a;padding-top: 5px;border: 3px solid black;border-radius:5px;float:center;">
