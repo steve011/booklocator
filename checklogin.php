@@ -75,7 +75,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                
      } else {
           //echo 'Username/Password Invalid';
-          header('Location: login.php?msg=1');
+          //header('Location: login.php?msg=1');
      }
           
 } else {
