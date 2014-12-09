@@ -23,7 +23,7 @@ $my_query = 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;';
 			print '<tr>';
 			echo "<p><b> Results found: "; 
 			oci_execute($stid);
-			$count = current(oci_fetch_array($stid_count, OCI_RETURN_NULLS+OCI_ASSOC));
+			$count = current(oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC));
 			echo "$count</b><p>";
 			print '</tr>';
 			
