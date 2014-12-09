@@ -76,10 +76,10 @@ session_start();
 					</div>
 				</div>
 				<div class="col-xs-12" style="background-color:#ff471a;height:670px;margin-top:20px;">
-					
+					<h3>External Reviews: </h3>
 					 
 					<div class="col-xs-12" style="height:600px;background-color:#1ad2ff;margin-top:10px;">
-					<h3>External Reviews: </h3>
+					
 					<?php  
 						$iframe_url = $row['REVIEW_IFRAME_URL'];
 						$iframe_url = str_replace("exp=2014-12-08", "exp=2015-12-08", $iframe_url);
