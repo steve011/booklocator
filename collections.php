@@ -115,6 +115,8 @@ if ($searching == "Books")
 			while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
   					while($row = oci_fetch_array($stid))
   					{
+  					display_book($row, $connection);
+  					/*
   					echo '<div class="col-xs-2" style="height:300px;margin:19.5px;background-image:url("");background-size:100% 100%;>';
   					echo '<img style="z-index:1;position:absolute;height:250px;width:100%;" src="http://i.imgur.com/pV1XQjk.jpg">';
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
@@ -122,6 +124,7 @@ if ($searching == "Books")
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
 					echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div>';
+					*/
 					}
 			}
 		}
