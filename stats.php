@@ -11,12 +11,12 @@ session_start();
 <h2>Search</h2>
 
 <?php
-	 $stid = oci_parse($connection, 'SELECT location,  COUNT(*) FROM USERS GROUP BY location;'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+	<?php
+	$stid = oci_parse($connection, 'SELECT * FROM (SELECT * FROM BOOKS ORDER BY YEAR_OF_PUBLICATION) WHERE ROWNUM <= 5'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
-	 $value = 0;
-	$array = array();
   	while($row = oci_fetch_array($stid))
   	{
+  		echo $row;
 	}
 ?>
 <?php
