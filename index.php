@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?php 
 require ('../connect.php');
-include ('functions.php';)
+include ('functions.php';) // contains get_average_rating($isbn, $conn);
 session_start();
 /*
 function get_average_rating($isbn, $conn){
