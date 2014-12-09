@@ -85,16 +85,14 @@ session_start();
 <div class="col-xs-4">
 <h2>Perfect Rated Books</h2>
 <?php
-	$stid = oci_parse($connection, 'SELECT title FROM BOOKS WHERE RATING = 10'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
+	$stid = oci_parse($connection, 'SELECT COUNT(*), book_rating FROM RATINGS GROUP BY book_rating ORDER BY book_rating DESC'); /* Added "WHERE ROWNUM <= 1000", takes forever to load otherwise */
 	oci_execute($stid);
   	while($row = oci_fetch_array($stid))
   	{
-  		if($row['AGE'] != "" && $row['AGE'] < 110){
   		echo $row['COUNT(*)'];
   		echo "   :   ";
-  		echo $row['AGE'];
+  		echo $row['BOOK_RATING'];
   		echo '<br></br>';}
-	}
 ?>
 </div>
 
