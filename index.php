@@ -5,11 +5,10 @@ session_start();
 function get_average_rating($isbn, $conn){
 	$avg_stid = oci_parse($conn, "Select sum(book_rating)/count(*) from ratings where isbn ='".$isbn."'");
 	$num_stid = oci_parse($conn, "Select count(*) from ratings where isbn ='".$isbn."'");
-  	if(oci_execute($avg_stid)){
+  	if(oci_execute($avg_stid) && oci_execute($num_stid)){
   		$result['AVERAGE_RATING'] = round(current(oci_fetch_array($avg_stid)), 2);
-  		if (oci_execute($num_stid)){
-  			$result['NUMBER_OF_RATINGS'] = current(oci_fetch_array($num_stid));
-  		}
+  		$result['NUMBER_OF_RATINGS'] = current(oci_fetch_array($num_stid));
+  		return $result;
   	}else{
   		return -1;
   	}
@@ -80,7 +79,7 @@ function get_average_rating($isbn, $conn){
 					echo '<img style="z-index:2;position:relative;height:250px;width:100%;" src="'.htmlentities($row["IMAGE_URL_L"]).'">';
 					echo '<div class="width:100%;text-align:center;color:white;border-top:1px solid black;">';
 					echo '<p style="font-size:12px;text-align:center;">'.htmlentities($row["TITLE"]).'</p>';
-					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;"> Average Rating: '.htmlentities($avg_rating).'</p>';
+					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;"> Average Rating: '.htmlentities($avg_rating['AVERAGE_RATING']).'</p>';
 					if(isset($row["PRICE"])) echo '<p style="font-size:12px;text-align:center;">$'.htmlentities($row["PRICE"]).'</p>';
 					echo '</div></div></a>';
 					}
