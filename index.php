@@ -21,8 +21,8 @@ session_start();
 						<?php 
 						if($_SESSION['username'])
 						{
-						echo '<p style="position:relative;left:0px;bottom:-45px;">'. $username.'</p>';
-						echo '<a href="index.php" style="cursor:pointer;position:relative;right:0px;bottom:-15px;" onclick="'.$_SESSION['username']=NULL.'">Logout</a>';
+						echo '<p style="position:relative;left:0px;bottom:-45px;">'. echo $username.'</p>';
+						echo '<a href="index.php" style="cursor:pointer;position:relative;left:100%;bottom:-15px;" onclick="'.$_SESSION['username']=NULL.'">Logout</a>';
 						}
 						?>
 					</div>
